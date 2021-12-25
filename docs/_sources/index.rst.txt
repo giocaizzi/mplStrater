@@ -5,9 +5,14 @@ mplStrater: plot stratigraphic columns with matplotlib!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Code reference:
+   :caption: Examples:
 
    stratigraphic_map.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Code reference:
+
    reference/index.rst
 
 Indices and tables

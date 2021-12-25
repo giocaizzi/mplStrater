@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example of usage" href="stratigraphic_map.html" /> 
+    <link rel="next" title="Plot a stratigraphic map" href="stratigraphic_map.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +39,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Example of usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Plot a stratigraphic map</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Code Reference</a></li>
 </ul>
 
@@ -96,25 +99,33 @@
 <div class="section" id="mplstrater-plot-stratigraphic-columns-with-matplotlib">
 <h1>mplStrater: plot stratigraphic columns with matplotlib!<a class="headerlink" href="#mplstrater-plot-stratigraphic-columns-with-matplotlib" title="Permalink to this headline"></a></h1>
 <p>This package allows to plot stratigraphic columns with matplotlib.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is project is under developement</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is project is under developement and it has not been yet released.</p>
 </div>
-<p>Given stratigraphic data <strong>without missing layers</strong> sored from a CSV file,
-specified during the initialization of <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>, and a <code class="code docutils literal notranslate"><span class="pre">mplStrater.Legend</span></code> object in which
-is specified the map symbology, the package creates a <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code> object in which a
+<p>Passing to <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>:</p>
+<ul class="simple">
+<li><p>some stratigraphic data <strong>without missing layers</strong> stored in a CSV file</p></li>
+<li><p>a <code class="code docutils literal notranslate"><span class="pre">mplStrater.Legend</span></code> object in which</p></li>
+</ul>
+<p>the package creates a <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code> object in which a
 series of <code class="code docutils literal notranslate"><span class="pre">mplStrater.strata.Columns</span></code> are plotted. Strata columns are inset axes of a main
 <code class="code docutils literal notranslate"><span class="pre">matplotlib.figure</span></code> called with the package initialization.</p>
 <p>Packaged from a hardcoded script in quarantine in december 2021, by <a class="reference external" href="https://github.com/giocaizzi">&#64;giocaizzi</a>.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Example of usage</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Plot a stratigraphic map</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="stratigraphic_map.html#Initiate-a-StratigraphicMap">Initiate a <code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stratigraphic_map.html#Define-a-Legend">Define a <code class="docutils literal notranslate"><span class="pre">Legend</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stratigraphic_map.html#Plot-and-Export">Plot and Export</a></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Code Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference/strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference/stratigraphic_map.html"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
@@ -136,7 +147,7 @@ series of <code class="code docutils literal notranslate"><span class="pre">mplS
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="stratigraphic_map.html" class="btn btn-neutral float-right" title="Example of usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="stratigraphic_map.html" class="btn btn-neutral float-right" title="Plot a stratigraphic map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

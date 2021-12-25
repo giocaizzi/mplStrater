@@ -38,9 +38,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Example of usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Plot a stratigraphic map</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Code Reference</a></li>
 </ul>
 
@@ -93,13 +96,16 @@
 }
 </style>
 <p>This package allows to plot stratigraphic columns with matplotlib.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is project is under developement</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is project is under developement and it has not been yet released.</p>
 </div>
-<p>Given stratigraphic data <strong>without missing layers</strong> sored from a CSV file,
-specified during the initialization of <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>, and a <code class="code docutils literal notranslate"><span class="pre">mplStrater.Legend</span></code> object in which
-is specified the map symbology, the package creates a <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code> object in which a
+<p>Passing to <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>:</p>
+<ul class="simple">
+<li><p>some stratigraphic data <strong>without missing layers</strong> stored in a CSV file</p></li>
+<li><p>a <code class="code docutils literal notranslate"><span class="pre">mplStrater.Legend</span></code> object in which</p></li>
+</ul>
+<p>the package creates a <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code> object in which a
 series of <code class="code docutils literal notranslate"><span class="pre">mplStrater.strata.Columns</span></code> are plotted. Strata columns are inset axes of a main
 <code class="code docutils literal notranslate"><span class="pre">matplotlib.figure</span></code> called with the package initialization.</p>
 <p>Packaged from a hardcoded script in quarantine in december 2021, by <a class="reference external" href="https://github.com/giocaizzi">&#64;giocaizzi</a>.</p>

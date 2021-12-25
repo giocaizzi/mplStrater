@@ -1,11 +1,14 @@
 This package allows to plot stratigraphic columns with matplotlib.
 
-.. warning ::
-    This is project is under developement
+.. note ::
+    This is project is under developement and it has not been yet released.
 
-Given stratigraphic data **without missing layers** sored from a CSV file,
-specified during the initialization of :code:`mplStrater`, and a :code:`mplStrater.Legend` object in which 
-is specified the map symbology, the package creates a :code:`matplotlib.axes` object in which a
+Passing to :code:`mplStrater`:
+
+* some stratigraphic data **without missing layers** stored in a CSV file
+* a :code:`mplStrater.Legend` object in which 
+
+the package creates a :code:`matplotlib.axes` object in which a
 series of :code:`mplStrater.strata.Columns` are plotted. Strata columns are inset axes of a main
 :code:`matplotlib.figure` called with the package initialization.
 
