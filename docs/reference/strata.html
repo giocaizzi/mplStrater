@@ -40,12 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">Prova</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../strata.html">Strata: stratigraphic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stratigraphic_map.html">Plot a stratigraphic map</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../stratigraphic_map.html">Example of usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#column-class"><code class="docutils literal notranslate"><span class="pre">Column</span></code> class</a></li>
@@ -117,6 +118,12 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">danger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_qual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column" title="Permalink to this definition"></a></dt>
 <dd><p>This objects is the single stratigraphic column.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="mplStrater.Column.fill_column">
+<span class="sig-name descname"><span class="pre">fill_column</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.fill_column" title="Permalink to this definition"></a></dt>
+<dd><p>prints the single <cite>mplStrater.strata.Column</cite> object onto a <cite>mplStrater.StratigraphicMap</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.Column.hardcode_labels">
 <span class="sig-name descname"><span class="pre">hardcode_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.hardcode_labels" title="Permalink to this definition"></a></dt>
 <dd><p>hardcode labels.</p>
@@ -135,12 +142,6 @@
 <dt class="sig sig-object py" id="mplStrater.Column.label_column">
 <span class="sig-name descname"><span class="pre">label_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.label_column" title="Permalink to this definition"></a></dt>
 <dd><p>labels single layers of stratigraphic column</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Column.plot_column">
-<span class="sig-name descname"><span class="pre">plot_column</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.plot_column" title="Permalink to this definition"></a></dt>
-<dd><p>prints the single <cite>mplStrater.strata.Column</cite> object onto a <cite>mplStrater.StratigraphicMap</cite>.</p>
 </dd></dl>
 
 <dl class="py method">

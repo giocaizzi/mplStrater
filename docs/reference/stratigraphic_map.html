@@ -39,12 +39,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">Prova</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../strata.html">Strata: stratigraphic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stratigraphic_map.html">Plot a stratigraphic map</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../stratigraphic_map.html">Example of usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
@@ -196,25 +197,35 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap.plot_basemap">
-<span class="sig-name descname"><span class="pre">plot_basemap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_basemap" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_basemap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_basemap" title="Permalink to this definition"></a></dt>
 <dd><p>sets basemap if this has been correctly specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>color_correction</strong> (<em>bool</em>) – execute color correction with <cite>rio-color</cite> package.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>) – </p></li>
+<li><p><strong>color_correction</strong> (<em>bool</em>) – execute color correction with <cite>rio-color</cite> package.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap.plot_points">
-<span class="sig-name descname"><span class="pre">plot_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_points" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_points" title="Permalink to this definition"></a></dt>
 <dd><p>plot points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ax</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>) – </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap.plot_strata_columns">
-<span class="sig-name descname"><span class="pre">plot_strata_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">legend</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_strata_columns" title="Permalink to this definition"></a></dt>
-<dd><p>plot all stratigraphic columns in df.</p>
+<span class="sig-name descname"><span class="pre">plot_strata_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.plot_strata_columns" title="Permalink to this definition"></a></dt>
+<dd><p>plot all stratigraphic columns in df.
+:param ax:
+:type ax: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes</span></code></p>
 </dd></dl>
 
 <dl class="py method">

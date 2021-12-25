@@ -7,6 +7,7 @@ mplStrater: plot stratigraphic columns with matplotlib!
    :maxdepth: 2
    :caption: Examples:
 
+   strata.ipynb
    stratigraphic_map.ipynb
 
 .. toctree::
