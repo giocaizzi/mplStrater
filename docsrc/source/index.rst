@@ -1,5 +1,5 @@
-mplStrater: plot stratigraphic columns with matplotlib!
-=======================================================
+mplStrater: plot stratigraphic columns with python
+==================================================
 
 .. include:: intro.rst
 
