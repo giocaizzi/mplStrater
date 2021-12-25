@@ -1,11 +1,11 @@
-Welcome to mplStrater's documentation!
-======================================
+mplStrater: plot stratigraphic columns with matplotlib!
+=======================================================
 
 .. include:: intro.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Code reference:
 
    stratigraphic_map.ipynb
    reference/index.rst
