@@ -121,7 +121,7 @@ class Column:
         self.inset.invert_yaxis() 
 
 
-    def plot_column(self):
+    def fill_column(self):
         """
         prints the single `mplStrater.strata.Column` object onto a `mplStrater.StratigraphicMap`.
         """

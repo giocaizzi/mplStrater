@@ -149,15 +149,17 @@ class StratigraphicMap:
             bottom=False
         )
         self.plot_basemap()
-        self.plot_points()
-        self.plot_strata_columns(legend=legend)
+        self.plot_points(self.ax)
+        self.plot_strata_columns(legend=legend,ax=self.ax)
 
-    def plot_basemap(self,color_correction=True):
+    def plot_basemap(self,ax,color_correction=True):
         """
         sets basemap if this has been correctly specified.
 
         Arguments:
+            ax (:obj:`matplotlib.axes`) ax on which to plot the points.
             color_correction (bool): execute color correction with `rio-color` package.
+
         """
         if self.img_alpha is not None and self.img_rgb is not None and self.img_transform is not None :
             if color_correction is True:
@@ -168,7 +170,7 @@ class StratigraphicMap:
             desaturated=np.concatenate((self.img_rgb,self.img_alpha),axis=0)
 
             #plotto
-            show(desaturated,transform=self.img_transform,ax=self.ax)
+            show(desaturated,transform=self.img_transform,ax=ax)
         return 
 
     def normalize_raster(self):
@@ -189,15 +191,18 @@ class StratigraphicMap:
         self.img_alpha=(alpha-np.amin(alpha))/(np.amax(alpha)-np.amin(alpha))
         self.img_alpha=self.img_alpha[np.newaxis,:,:]
 
-    def plot_points(self):
+    def plot_points(self,ax):
         """
         plot points
+
+        Arguments:
+            ax (:obj:`matplotlib.axes`) ax on which to plot the points.
         """
         ####punti
-        self.merged_df.plot(ax=self.ax,color="black",markersize=8)
+        self.merged_df.plot(ax=ax,color="black",markersize=8)
         #labels
         for x, y, label in zip(self.merged_df.geometry.x, self.merged_df.geometry.y, self.merged_df.punto):
-            self.ax.annotate(
+            ax.annotate(
                 label,
                 xy=(x, y),
                 xytext=(-5, 0),
@@ -219,13 +224,15 @@ class StratigraphicMap:
         """
         return self.f.savefig(path)
 
-    def plot_strata_columns(self,legend):
+    def plot_strata_columns(self,legend,ax):
         """
         plot all stratigraphic columns in df.
+        Arguments:
+            ax (:obj:`matplotlib.axes`) ax on which to plot the points.
         """
         #stratigraphy columns
         for i in range(len(self.merged_df)):
-            c=Column(self.ax,legend,
+            c=Column(ax,legend,
                 self.merged_df.loc[i,"punto"],
                 (self.merged_df.loc[i,"x"],self.merged_df.loc[i,"y"]),
                 self.merged_df.loc[i,"layers"],
@@ -237,7 +244,7 @@ class StratigraphicMap:
                 self.merged_df.loc[i,"amianto_quant"],
                 self.max_profondita
             )
-            c.plot_column()
+            c.fill_column()
             c.set_inset_params()
             c.label_column(hardcoding=self.label_hardcoding)
             
