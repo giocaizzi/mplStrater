@@ -195,26 +195,20 @@ class StratigraphicMap:
         """
         ####punti
         self.merged_df.plot(ax=self.ax,color="black",markersize=8)
-
         #labels
         for x, y, label in zip(self.merged_df.geometry.x, self.merged_df.geometry.y, self.merged_df.punto):
-            if any(label in s for s in ["TI01","TI03","TI15","TI13","SI04","TI06","SI05","SI01","SI02","TI08","SI03","TI10"]):
-                #destra
-                # ax.annotate(label, xy=(x, y), xytext=(+5, 0), fontsize=5, textcoords="offset points",bbox=dict(facecolor='white', linewidth=0.5,edgecolor='k',pad=1))
-                self.ax.annotate(label, xy=(x, y), xytext=(+5, 0), fontsize=5, textcoords="offset points",path_effects=[pe.withStroke(linewidth=2, foreground="white")])
-            
-            elif label == "SI07":
-                self.ax.annotate(label, xy=(x, y), xytext=(+10, 0), fontsize=5, textcoords="offset points",path_effects=[pe.withStroke(linewidth=2, foreground="white")])
-
-            
-            elif any(label in s for s in ["TI14","TI18","TI07","TI17"]):
-                #sinistra
-                # ax.annotate(label, xy=(x, y), xytext=(-15, 0), fontsize=5, textcoords="offset points",bbox=dict(facecolor='white', linewidth=0.5,edgecolor='k',pad=1))
-                self.ax.annotate(label, xy=(x, y), xytext=(-15, 0), fontsize=5, textcoords="offset points",path_effects=[pe.withStroke(linewidth=2, foreground="white")])
-
-            else:
-                # ax.annotate(label, xy=(x, y), xytext=(-5, 5), fontsize=5, textcoords="offset points",bbox=dict(facecolor='white',linewidth=0.5, edgecolor='k',pad=1))
-                self.ax.annotate(label, xy=(x, y), xytext=(-5, 5), fontsize=5, textcoords="offset points",path_effects=[pe.withStroke(linewidth=2, foreground="white")])
+            self.ax.annotate(
+                label,
+                xy=(x, y),
+                xytext=(-5, 0),
+                ha="right",
+                fontsize=5,
+                textcoords="offset points",
+                path_effects=[
+                    pe.withStroke(
+                        linewidth=2,
+                        foreground="white"
+                    )])
 
     def savefig(self,path):
         """

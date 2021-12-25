@@ -82,19 +82,8 @@ class Column:
 
     def __init__(self,ax,legend,name,coord,prof,layers,danger,dest,scale,am_qual,am_quant,max_scale):
         
-        #hardcoding posizione stratigrafia
-        if any(name in s for s in ["TI08","SI04","SI06","TI07","SI01"]):
-            #upperright
-            loc=1
-        elif any(name in s for s in ["TI13","SI07"]):
-            #upper left
-            loc=2
-        else:
-            #upper center
-            loc=9
-        
-        if name=="SI07":
-            coord=(coord[0]+5,coord[1])
+        #default anchor it upper left
+        loc=1
 
         #PROPRIETIES
         self.legend=legend
@@ -170,12 +159,13 @@ class Column:
             side (str): string `left` or `right`
         """
         #check if 
-        if self.name in hardcoding:
-            #move labels up or down
-            for key in hardcoding[self.name]["movetext"]:
-                locations[int(key)]=locations[int(key)]+float(hardcoding[self.name]["movetext"][key])
-            if hardcoding[self.name]["side"]!="":
-                side=hardcoding[self.name]["side"]
+        if hardcoding is not None:
+            if self.name in hardcoding:
+                #move labels up or down
+                for key in hardcoding[self.name]["movetext"]:
+                    locations[int(key)]=locations[int(key)]+float(hardcoding[self.name]["movetext"][key])
+                if hardcoding[self.name]["side"]!="":
+                    side=hardcoding[self.name]["side"]
         return locations,side
 
     def _set_oppside(self,side):
