@@ -148,7 +148,7 @@ class StratigraphicMap:
             left=False,
             bottom=False
         )
-        self.plot_basemap()
+        self.plot_basemap(self.ax)
         self.plot_points(self.ax)
         self.plot_strata_columns(legend=legend,ax=self.ax)
 
