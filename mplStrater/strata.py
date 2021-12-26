@@ -12,7 +12,7 @@ class Symbology:
     """
     This is the symbology definition object for layers of the `mplStrater.strata.Column` object
 
-    Can have either a fill color or a hatch.
+    Can have either a fill color and/or a hatch.
     
     Arguments:
         d (dict): dict
