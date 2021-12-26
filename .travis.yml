@@ -8,8 +8,8 @@ script:
   - pytest
 only:
   changes:
-  - mplStrater
-  - tests
+  - ./mplStrater
+  - ./tests
 branches:
   only:
     - main
