@@ -14,5 +14,3 @@ git:
   - depth: 3
 after_success:
   - coveralls
-notifications:
-  email: false
