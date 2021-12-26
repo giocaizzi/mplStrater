@@ -9,18 +9,32 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name='mplStrater',
     version=mplStrater.__version__,
-    description="plot geologic stratigraphic columns",
+    description="plot geologic stratigraphic columns with python",
     author='giocaizzi',
     author_email='giocaizzi@gmail.com',
-    url='',
+    url='https://github.com/giocaizzi/mplStrater',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    packages=find_packages(include=['mplStrater', 'mplStrater.*']),
+    packages=find_packages(include=['mplStrater']),
     install_requires=[
         "geopandas",
         "matplotlib",
-        "numpy",
+        "numpy>=1.17",
         "pandas",
         "rasterio",
-        "rio_color"]
+        "rio_color"],
+    extras_require={
+        "docs":[
+            "sphinx",
+            "nbsphinx",
+            "sphinx_rtd_theme"
+            ],
+        "dev":[],
+        'test':['pytest'],
+    },
+    project_urls={
+        'Documentation':'https://giocaizzi.github.io/mplStrater/',
+        'Bug Reports': 'https://github.com/giocaizzi/mplStrater/issues',
+        'Source': 'https://github.com/giocaizzi/mplStrater',
+    },
 )
