@@ -20,6 +20,18 @@ class TestSymbology(unittest.TestCase):
         self.assertIsInstance(s.d,dict)
         self.assertEqual(set(s.hatches),set(hatches))
 
+    def test_error(self):
+        #test error input
+        hatches=["","xxxxxxxxx",""]
+        colors=["green","white","blue"]
+        self.assertRaises(
+            ValueError,
+            Symbology(d={},color=colors,hatches=hatches)
+            )
+
+
+
+
 class TestLegend(unittest.TestCase):
 
     def test_init(self):

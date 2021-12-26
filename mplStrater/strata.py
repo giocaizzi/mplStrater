@@ -83,13 +83,13 @@ class Column:
         name (str): name of the point
         legend(:obj:`mplStrater.strata.Legend`): legend object
         coord (:obj:`tuple`): coords (x,y)
-        prof ():
+        prof (float): height (depth) of stratigraphic column, for scaling purposes
         layers (list): ordered list of layers, encoded
         danger (list): ordered list of danger, encoded
         dest (str): label 1
         am_qual (str): label 2
         am_quant (str): label 3
-        max_scale ():
+        max_scale (float): max height of column of dataframe, for scaling purposes
     """
 
     def __init__(
