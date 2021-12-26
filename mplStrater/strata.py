@@ -78,9 +78,29 @@ class Legend:
 class Column:
     """
     This objects is the single stratigraphic column.
+
+    Attributes:
+        name (str): name of the point
+        legend(:obj:`mplStrater.strata.Legend`): legend object
+        coord (:obj:`tuple`): coords (x,y)
+        layers (list): ordered list of layers, encoded
+        danger (list): ordered list of danger, encoded
+        dest (str): label 1
+        am_qual (str): label 2
+        am_quant (str): label 3
     """
 
-    def __init__(self,ax,legend,name,coord,prof,layers,danger,dest,scale,am_qual,am_quant,max_scale):
+    def __init__(
+            self,
+            ax,legend,
+            name,
+            coord,
+            prof,
+            layers,
+            danger,
+            dest,scale,am_qual,am_quant,
+            max_scale
+            ):
         
         #default anchor it upper left
         loc=1
