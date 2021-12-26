@@ -2,7 +2,9 @@
 
 ![Build status](https://app.travis-ci.com/giocaizzi/mplStrater.svg?branch=main)
 
-This package provides the possibility to plot geologic stratigraphic columns with a structured labelling system on georeferenced `matplotlib` figures.
+This package provides the possibility to plot geologic stratigraphic columns with a structured labelling system on `matplotlib` figures.
+
+Additionally, it allows to use georeferenced rasters as basemap.
 
 ![Image](data/temp.png)
 
