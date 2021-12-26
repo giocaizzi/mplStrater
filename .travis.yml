@@ -4,14 +4,15 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install .
+cache: pip
 script:
-  - pytest
+  - pytest --cov=mplStrater/
 branches:
   only:
     - main
 git:
   - depth: 3
 after_success:
-  - "sbt coveralls"
+  - coveralls
 notifications:
   email: false

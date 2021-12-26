@@ -33,6 +33,7 @@ setup(
             ],
         "dev":[],
         'test':['pytest'],
+        "coverage":["coveralls","pytest-cov"]
     },
     project_urls={
         'Documentation':'https://giocaizzi.github.io/mplStrater/',
