@@ -11,3 +11,7 @@ branches:
     - main
 git:
   - depth: 3
+after_success:
+  - "sbt coveralls"
+notifications:
+  email: false
