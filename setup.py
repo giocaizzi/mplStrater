@@ -24,17 +24,19 @@ setup(
         "numpy>=1.17",
         "pandas",
         "rasterio",
-        "rio_color"],
+        "rio_color"
+        ],
+        
     extras_require={
         "docs":[
             "sphinx",
             "nbsphinx",
-            "sphinx_rtd_theme"
-            ],
+            "myst-parser",
+            "sphinx_rtd_theme",
+            "docutils==0.16"],
         "dev":[],
-        'test':['pytest'],
-        "coverage":["coveralls","pytest-cov"]
-    },
+        'test':['pytest',"pytest-cov"],
+        },
     project_urls={
         'Documentation':'https://giocaizzi.github.io/mplStrater/',
         'Bug Reports': 'https://github.com/giocaizzi/mplStrater/issues',
