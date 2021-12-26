@@ -26,7 +26,7 @@ class TestSymbology(unittest.TestCase):
         colors=["green","white","blue"]
         self.assertRaises(
             ValueError,
-            Symbology(d={},color=colors,hatches=hatches)
+            Symbology(d={},colors=colors,hatches=hatches)
             )
 
 

@@ -1,0 +1,21 @@
+name: geo
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.7
+  - geopandas
+  - matplotlib
+  - numpy>=1.17
+  - pandas
+  - rasterio
+  - rio-color
+  - ipython
+  - ipykernel
+  - pytest
+  - pytest-cov
+  - sphinx
+  - sphinx_rtd_theme
+  - myst-parser
+  - nbsphinx
+  - docutils=0.16
