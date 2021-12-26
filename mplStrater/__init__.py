@@ -18,11 +18,13 @@ class StratigraphicMap:
     This class is the core of mplStrater package.
 
     Arguments:
+        strataframe (:obj:`mplStrater.data.StrataFrame`): a StrataFrame object containing data to be plotted.
         path_to_data (str): path to stratigraphic information stored in csv file
         basemap_path (str): path to georeferenced raster to use as basemap.
 
     Attributes:
-        df (:obj:`pandas.DataFrame`): dataframe with stratigrafic information. No gaps are allowed.
+        strataframe (:obj:`mplStrater.data.StrataFrame`): the linked StrataFrame object
+        df (:obj:`pandas.DataFrame`): dataframe with stratigrafic information grouped by point. 
         f (:obj:`matplotlib.Figure`): matplotlib figure with stratigraphic map
         ax (:obj:`matplotlib.Axes`): matplotlib axes with stratigraphic map
         fig_kwd (dict): keywords to pass to `matplotlib.pyplot.subplots()`
@@ -30,15 +32,11 @@ class StratigraphicMap:
         img_alpha (:obj:`numpy.array`): 2D array of alpha channel
     """
 
-    def __init__(self,path_to_data=None,basemap_path=None,fig_kwd=None,label_hardcoding=None):
-
-        #handle path_to_data values
-        if path_to_data is not None and isinstance(path_to_data,str):
-            self.df=pd.read_csv(path_to_data)
-            self.set_df()
-        else:
-            raise ValueError("Must specify string path to a csv file containing stratigraphic information.")
-
+    def __init__(self,strataframe,basemap_path=None,fig_kwd=None,label_hardcoding=None):
+        #strataframe
+        self.strataframe=strataframe
+        self.df=strataframe.strataframe
+        
         #handle label_hardcoding
         self.label_hardcoding=label_hardcoding
         
@@ -65,72 +63,7 @@ class StratigraphicMap:
             self.img_alpha=None
         else:
             raise ValueError("Must specify string path to a georeferenced raster.")
-
-
-    def set_df(self,epsg=32633):
-        """
-        process the dataframe to get the desired information to plot the data.
-        Sets the dataframe as GeoDataFrame of the given Coordinate Reference System (crs).
-
-        Arguments:
-            epsg (str) : EPSG code string of GeoDataFrame CRS
-        """
-        #df con lista matrici
-        matrici=self.df.groupby(['punto','x','y'])['matrice'].apply(list).reset_index(name="lista_matrici")
-        #duplicazione ultimo elemento per pareggiare i conti
-        for i in range(len(matrici)):
-                temp=matrici.loc[i,"lista_matrici"]
-                temp.append(temp[-1])
-                matrici.at[i,"lista_matrici"]=temp
-
-        #df con pericolosità
-        pericolosita=self.df.groupby(['punto','x','y'])['pericolosita'].apply(list).reset_index(name="lista_pericolo")
-        for i in range(len(pericolosita)):
-                temp=pericolosita.loc[i,"lista_pericolo"]
-                temp.append(temp[-1])
-                pericolosita.at[i,"lista_pericolo"]=temp
-
-        # #df profondità
-        profondita=self.df.groupby(['punto','x','y'])[['da','a']].agg(list)
-        profondita["layers"]=profondita["da"]+profondita["a"]
-        profondita=profondita.drop(["da","a"],axis=1)
-        profondita['layers'] = profondita['layers'].apply(lambda x: np.unique(x))
-
-        #destino
-        destino=self.df.groupby(["punto","x","y"])["smaltibilità_riutilizzo"].apply(list).reset_index(name="destino")
-        for i in range(len(pericolosita)):
-                temp=destino.loc[i,"destino"]
-                temp.append(temp[-1])
-                destino.at[i,"destino"]=temp
-
-        # # amianto
-        amianto_qual=self.df.groupby(["punto","x","y"])["amianto_qualitativa"].apply(list).reset_index(name="amianto_qual")
-        for i in range(len(pericolosita)):
-                temp=amianto_qual.loc[i,"amianto_qual"]
-                temp.append(temp[-1])
-                amianto_qual.at[i,"amianto_qual"]=temp
-
-        amianto_quant=self.df.groupby(["punto","x","y"])["amianto_quantitativa"].apply(list).reset_index(name="amianto_quant")
-        for i in range(len(pericolosita)):
-                temp=amianto_quant.loc[i,"amianto_quant"]
-                temp.append(temp[-1])
-                amianto_quant.at[i,"amianto_quant"]=temp
-        
-        #merged dfs
-        merged=pd.merge(matrici,profondita,on=['punto','x','y'])
-        merged=pd.merge(merged,pericolosita,on=['punto','x','y'])
-        merged=pd.merge(merged,destino,on=["punto","x","y"])
-        merged=pd.merge(merged,amianto_qual,on=["punto","x","y"])
-        merged=pd.merge(merged,amianto_quant,on=["punto","x","y"])
-
-        merged["scala"]=merged.layers.apply(max)
-        self.max_profondita=merged.scala.max()
-
-        self.merged_df=merged
-        self.merged_df=gp.GeoDataFrame(self.merged_df, geometry=gp.points_from_xy(self.merged_df.x,self.merged_df.y))
-        self.merged_df=self.merged_df.set_crs(epsg=epsg)
     
-
     def plot(self,legend):
         """
         creates figure and plots the data.
@@ -199,9 +132,9 @@ class StratigraphicMap:
             ax (:obj:`matplotlib.axes`) ax on which to plot the points.
         """
         ####punti
-        self.merged_df.plot(ax=ax,color="black",markersize=8)
+        self.df.plot(ax=ax,color="black",markersize=8)
         #labels
-        for x, y, label in zip(self.merged_df.geometry.x, self.merged_df.geometry.y, self.merged_df.punto):
+        for x, y, label in zip(self.df.geometry.x, self.df.geometry.y, self.df.punto):
             ax.annotate(
                 label,
                 xy=(x, y),
@@ -226,23 +159,23 @@ class StratigraphicMap:
 
     def plot_strata_columns(self,legend,ax):
         """
-        plot all stratigraphic columns in df.
+        plot all stratigraphic columns in strataframe.
         Arguments:
             ax (:obj:`matplotlib.axes`) ax on which to plot the points.
         """
         #stratigraphy columns
-        for i in range(len(self.merged_df)):
+        for i in range(len(self.df)):
             c=Column(ax,legend,
-                self.merged_df.loc[i,"punto"],
-                (self.merged_df.loc[i,"x"],self.merged_df.loc[i,"y"]),
-                self.merged_df.loc[i,"layers"],
-                self.merged_df.loc[i,"lista_matrici"],
-                self.merged_df.loc[i,"lista_pericolo"],
-                self.merged_df.loc[i,"destino"],
-                self.merged_df.loc[i,"scala"],
-                self.merged_df.loc[i,"amianto_qual"],
-                self.merged_df.loc[i,"amianto_quant"],
-                self.max_profondita
+                self.df.loc[i,"punto"],
+                (self.df.loc[i,"x"],self.df.loc[i,"y"]),
+                self.df.loc[i,"layers"],
+                self.df.loc[i,"lista_matrici"],
+                self.df.loc[i,"lista_pericolo"],
+                self.df.loc[i,"destino"],
+                self.df.loc[i,"scala"],
+                self.df.loc[i,"amianto_qual"],
+                self.df.loc[i,"amianto_quant"],
+                self.strataframe.max_profondita
             )
             c.fill_column()
             c.set_inset_params()

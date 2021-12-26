@@ -7,6 +7,7 @@ mplStrater: plot stratigraphic columns with python
    :maxdepth: 2
    :caption: Examples:
 
+   examples/data.ipynb
    examples/strata.ipynb
    examples/stratigraphic_map.ipynb
 
