@@ -16,7 +16,6 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_description,
     packages=find_packages(include=['mplStrater']),
-    python_requires='3.7',
     install_requires=[
         "geopandas",
         "matplotlib",
