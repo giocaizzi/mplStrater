@@ -1,5 +1,7 @@
 # mplStrater
 
+![Build status](https://app.travis-ci.com/giocaizzi/mplStrater.svg?branch=main)
+
 This package provides the possibility to plot geologic stratigraphic columns with a structured labelling system on georeferenced `matplotlib` figures.
 
 ![Image](data/temp.png)
