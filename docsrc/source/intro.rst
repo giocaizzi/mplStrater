@@ -1,4 +1,4 @@
-This package allows to plot stratigraphic columns with matplotlib.
+This package allows to plot stratigraphic columns with python.
 
 .. note ::
     This is project is under developement and it has not been yet released.
