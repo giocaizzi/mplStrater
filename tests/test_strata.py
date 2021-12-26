@@ -1,9 +1,7 @@
 import unittest
 from matplotlib.colors import ListedColormap
-
-
-from matplotlib import colors
-from mplStrater.strata import Symbology,Legend
+from numpy import less_equal
+from mplStrater.strata import *
 
 class TestSymbology(unittest.TestCase):
 
@@ -30,6 +28,22 @@ class TestLegend(unittest.TestCase):
         self.assertIsInstance(l.matrix,Symbology)
         self.assertIsInstance(l.hatches,Symbology)
 
+# class TestColumn(unittest.TestCase):
+
+#     def setUp(self):
+#         self.l=Legend()
+#         self.c=Column(
+#             name="P01",
+#             legend=self.l,
+#             coord=(5,5),
+#             prof=5,
+#             layers=[],
+
+#         )
+#         return 
+
+#     def test(self):
+#         pass
 
 if __name__=="__main__":
     unittest.main()
