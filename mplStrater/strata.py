@@ -33,7 +33,7 @@ class Symbology:
         elif hatches is not None and colors is None:
             self.hatches=hatches
         else:
-            ValueError("This symbology profile is not implemented.")
+            raise ValueError("This symbology profile is not implemented.")
 
 class Legend:
     """
