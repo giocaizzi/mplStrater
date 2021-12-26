@@ -3,10 +3,8 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/giocaizzi/mplStrater)
 ![Build status](https://app.travis-ci.com/giocaizzi/mplStrater.svg?branch=main)
 [![Coverage Status](https://coveralls.io/repos/github/giocaizzi/mplStrater/badge.svg?branch=main)](https://coveralls.io/github/giocaizzi/mplStrater?branch=main)
-[![Requirements Status](https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=develop)](https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=develop)
-![GitHub](https://img.shields.io/github/license/giocaizzi/mplStrater)
-
-![GitHub all releases](https://img.shields.io/github/downloads/giocaizzi/mplStrater/total?label=GitHub%20downloads)
+[![Requirements Status](https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main)](https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main)
+![Licende](https://img.shields.io/github/license/giocaizzi/mplStrater)
 ![GitHub issues](https://img.shields.io/github/issues/giocaizzi/mplStrater)
 
 This package provides the possibility to plot geologic stratigraphic columns with a structured labelling system on `matplotlib` figures.
