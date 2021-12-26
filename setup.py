@@ -15,7 +15,9 @@ setup(
     url='https://github.com/giocaizzi/mplStrater',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    packages=find_packages(include=['mplStrater']),
+    packages=find_packages(include=['mplStrater','mplStrater/*']),
+    setup_requires=[],
+    tests_require=['pytest'],
     install_requires=[
         "geopandas",
         "matplotlib",
