@@ -7,7 +7,7 @@ from rasterio.plot import show
 import rio_color.operations as rio
 from rio_color.colorspace import ColorSpace as cs
 from rio_color.colorspace import convert_arr
-from mplStrater.strata import *
+from mplStrater.strata import Column
 import matplotlib.patheffects as pe
 from matplotlib.gridspec import GridSpec
 

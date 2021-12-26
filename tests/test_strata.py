@@ -1,7 +1,7 @@
 import unittest
 from matplotlib.colors import ListedColormap
 from numpy import less_equal
-from mplStrater.strata import *
+from mplStrater.strata import Symbology,Legend,Column
 
 class TestSymbology(unittest.TestCase):
 
@@ -22,15 +22,13 @@ class TestSymbology(unittest.TestCase):
 
     def test_error(self):
         #test error input
+        d={}
         hatches=["","xxxxxxxxx",""]
         colors=["green","white","blue"]
         self.assertRaises(
             ValueError,
-            Symbology(d={},colors=colors,hatches=hatches)
-            )
-
-
-
+            Symbology,
+            d,colors=colors,hatches=hatches)
 
 class TestLegend(unittest.TestCase):
 
