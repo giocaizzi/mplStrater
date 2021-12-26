@@ -9,7 +9,7 @@ script:
 only:
   changes:
   - mplStrater/*
-
+  - tests/*
 branches:
   only:
     - main
