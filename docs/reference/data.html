@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>data objects &mdash; mplStrater v0.0.1 documentation</title>
+  <title>data objects &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -201,12 +201,15 @@
 <h2><code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> class<a class="headerlink" href="#strataframe-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="mplStrater.data.StrataFrame">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.data.</span></span><span class="sig-name descname"><span class="pre">StrataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_to_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.data.</span></span><span class="sig-name descname"><span class="pre">StrataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame" title="Permalink to this definition">¶</a></dt>
 <dd><p>StrataFrame is a <cite>pandas.DataFrame</cite> object with some added methods
 functional to stratigraphic column plotting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>epsg</strong> (<em>str</em>) – EPSG code string of GeoDataFrame CRS</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) – dataframe of stratigraphic data.</p></li>
+<li><p><strong>epsg</strong> (<em>str</em>) – EPSG code string of GeoDataFrame CRS</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">

@@ -9,22 +9,23 @@ class StrataFrame:
     functional to stratigraphic column plotting.
 
     Arguments:
+        df (:obj:`pandas.DataFrame`): dataframe of stratigraphic data.
         epsg (str) : EPSG code string of GeoDataFrame CRS
 
     """
 
-    def __init__(self,path_to_data=None,epsg=None):
+    def __init__(self,df=None,epsg=None):
         
         #geodf
         self.epsg=epsg
 
         #handle path_to_data values
-        if path_to_data is not None and isinstance(path_to_data,str):
-            self.df=pd.read_csv(path_to_data)
+        if df is not None and isinstance(df,pd.DataFrame):
+            self.df=df
             self.set_df()
             self.geodf()
         else:
-            raise ValueError("Must specify string path to a csv file containing stratigraphic information.")
+            raise ValueError("Must provide a pandas dataframe with stratigraphic data.")
         pass
 
     def set_df(self):

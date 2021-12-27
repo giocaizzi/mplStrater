@@ -1,6 +1,5 @@
 import unittest
 from matplotlib.colors import ListedColormap
-from numpy import less_equal
 from mplStrater.strata import Symbology,Legend,Column
 
 class TestSymbology(unittest.TestCase):

@@ -23,3 +23,4 @@ github:
 	@make html
 	@cp -a build/html/. ../docs
 	@touch ../docs/.nojekyll
+	@open ../docs/index.html 

@@ -11,7 +11,7 @@
     "The main object of `strata` submodule is `mplStrater.strata.Column` which represents the single stratigraphic column.\n",
     "This example shows the structure of the class and how to use it.\n",
     "\n",
-    "First, import all required packages."
+    "First, import all required packages and load the example dataset."
    ]
   },
   {
@@ -25,26 +25,152 @@
     "from mplStrater.data import StrataFrame\n",
     "from mplStrater.strata import Column,Legend\n",
     "\n",
+    "import pandas as pd\n",
     "import matplotlib.pyplot as plt"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Then, initiate a `mpl.StrataFrame` with data from a local CSV file, specifying its `epsg` code. \n",
-    "\n",
-    "Then define a `Legend`."
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 2,
    "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>x</th>\n",
+       "      <th>y</th>\n",
+       "      <th>z</th>\n",
+       "      <th>punto</th>\n",
+       "      <th>campione</th>\n",
+       "      <th>da</th>\n",
+       "      <th>a</th>\n",
+       "      <th>area</th>\n",
+       "      <th>matrice</th>\n",
+       "      <th>pericolosita</th>\n",
+       "      <th>sostanza_pericolosità</th>\n",
+       "      <th>smaltibilità_riutilizzo</th>\n",
+       "      <th>amianto_qualitativa</th>\n",
+       "      <th>amianto_quantitativa</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>204026.93</td>\n",
+       "      <td>4973197.522</td>\n",
+       "      <td>258.399</td>\n",
+       "      <td>SI01</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td>0.6</td>\n",
+       "      <td>2A</td>\n",
+       "      <td>Riporto conforme</td>\n",
+       "      <td>_</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>_</td>\n",
+       "      <td>_</td>\n",
+       "      <td>-1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>204026.93</td>\n",
+       "      <td>4973197.522</td>\n",
+       "      <td>258.399</td>\n",
+       "      <td>SI01</td>\n",
+       "      <td>2</td>\n",
+       "      <td>0.6</td>\n",
+       "      <td>2.0</td>\n",
+       "      <td>2A</td>\n",
+       "      <td>Assenza campione</td>\n",
+       "      <td>_</td>\n",
+       "      <td>_</td>\n",
+       "      <td>_</td>\n",
+       "      <td>_</td>\n",
+       "      <td>-1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>204026.93</td>\n",
+       "      <td>4973197.522</td>\n",
+       "      <td>258.399</td>\n",
+       "      <td>SI01</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2.0</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>2A</td>\n",
+       "      <td>Rifiuto</td>\n",
+       "      <td>Pericoloso</td>\n",
+       "      <td>PIOMBO</td>\n",
+       "      <td>IA</td>\n",
+       "      <td>non rilevato</td>\n",
+       "      <td>-1</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           x            y        z punto campione   da    a area  \\\n",
+       "0  204026.93  4973197.522  258.399  SI01        1  0.0  0.6   2A   \n",
+       "1  204026.93  4973197.522  258.399  SI01        2  0.6  2.0   2A   \n",
+       "2  204026.93  4973197.522  258.399  SI01        2  2.0  3.5   2A   \n",
+       "\n",
+       "            matrice pericolosita sostanza_pericolosità  \\\n",
+       "0  Riporto conforme            _                   NaN   \n",
+       "1  Assenza campione            _                     _   \n",
+       "2           Rifiuto   Pericoloso                PIOMBO   \n",
+       "\n",
+       "  smaltibilità_riutilizzo amianto_qualitativa  amianto_quantitativa  \n",
+       "0                       _                   _                    -1  \n",
+       "1                       _                   _                    -1  \n",
+       "2                      IA        non rilevato                    -1  "
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df=pd.read_csv(\"../../../data/example.csv\")\n",
+    "df.head(3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Then, initiate a `mpl.StrataFrame` providing a `pandas.DataFrame` and specifying its `epsg` code. \n",
+    "\n",
+    "Then define a `Legend`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
    "outputs": [],
    "source": [
     "sf=StrataFrame(\n",
-    "    path_to_data=\"../../../data/example.csv\",\n",
+    "    df=df,\n",
     "    epsg=32633)\n",
     "l=Legend()"
    ]
@@ -62,7 +188,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
@@ -183,7 +309,7 @@
        "2      [-1, -1, -1, -1, -1, -1, -1, -1]    9.0  POINT (204008.734 4973122.605)  "
       ]
      },
-     "execution_count": 3,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -201,7 +327,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {

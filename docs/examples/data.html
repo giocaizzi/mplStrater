@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>StrataFrame &mdash; mplStrater v0.0.1 documentation</title>
+  <title>StrataFrame &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -94,7 +94,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">StrataFrame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strata.html">Strata: stratigraphic data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html">Plot a stratigraphic map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html#Load-data">Load data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul>
@@ -436,34 +435,182 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="StrataFrame">
 <h1>StrataFrame<a class="headerlink" href="#StrataFrame" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">mpl.data.StrataFrame</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> with additional features functional to plotting stratigraphic columns.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<p>First, import all required packages and load the example dataset.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">mplStrater.data</span> <span class="kn">import</span> <span class="n">StrataFrame</span>
 </pre></div>
 </div>
 </div>
-<p>Initiate class by proving a path to a csv file.The CSV file must be made of consecutive layers, without gaps</p>
-<p>In case you want to handle gaps, encode them with a code, such as <code class="docutils literal notranslate"><span class="pre">_</span></code> and specify the encoding in a legend.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sf</span><span class="o">=</span><span class="n">StrataFrame</span><span class="p">(</span>
-    <span class="n">path_to_data</span><span class="o">=</span><span class="s2">&quot;../../../data/example.csv&quot;</span><span class="p">,</span>
-    <span class="n">epsg</span><span class="o">=</span><span class="mi">32633</span>
-<span class="p">)</span>
+<span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../data/example.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>punto</th>
+      <th>campione</th>
+      <th>da</th>
+      <th>a</th>
+      <th>area</th>
+      <th>matrice</th>
+      <th>pericolosita</th>
+      <th>sostanza_pericolosità</th>
+      <th>smaltibilità_riutilizzo</th>
+      <th>amianto_qualitativa</th>
+      <th>amianto_quantitativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.6</td>
+      <td>2A</td>
+      <td>Riporto conforme</td>
+      <td>_</td>
+      <td>NaN</td>
+      <td>_</td>
+      <td>_</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>2</td>
+      <td>0.6</td>
+      <td>2.0</td>
+      <td>2A</td>
+      <td>Assenza campione</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>3.5</td>
+      <td>2A</td>
+      <td>Rifiuto</td>
+      <td>Pericoloso</td>
+      <td>PIOMBO</td>
+      <td>IA</td>
+      <td>non rilevato</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>3</td>
+      <td>3.5</td>
+      <td>5.2</td>
+      <td>2A</td>
+      <td>Assenza campione</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>3</td>
+      <td>5.2</td>
+      <td>6.2</td>
+      <td>2A</td>
+      <td>Rifiuto</td>
+      <td>Pericoloso</td>
+      <td>PIOMBO</td>
+      <td>NP</td>
+      <td>non rilevato</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Pass to <code class="docutils literal notranslate"><span class="pre">mplStrater</span></code> a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.The dataframe must be made of consecutive layers <strong>without gaps</strong>.</p>
+<p>Specify the epsg code of the dataframe coordinate reference system (crs).</p>
+<p>In case you need to handle gaps, encode them with a code, such as <code class="docutils literal notranslate"><span class="pre">_</span></code> and specify the encoding in a legend.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sf</span><span class="o">=</span><span class="n">StrataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">epsg</span><span class="o">=</span><span class="mi">32633</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>The object has <code class="docutils literal notranslate"><span class="pre">df</span></code> attribute to access the original dataframe loaded.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -472,7 +619,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -602,7 +749,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Similarly, the <code class="docutils literal notranslate"><span class="pre">mpl.Strater</span></code> GeoDataFrame can be accessed with the <code class="docutils literal notranslate"><span class="pre">strataframe</span></code> attribute.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -611,7 +758,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -721,9 +868,9 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-<p>The strataframe is a <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> and so inherits all methods, sumch as plotting.</p>
+<p>The strataframe is a <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> and so inherits all methods, such as plotting.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -732,7 +879,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -744,7 +891,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_data_9_1.png" src="../_images/examples_data_9_1.png" />
+<img alt="../_images/examples_data_10_1.png" src="../_images/examples_data_10_1.png" />
 </div>
 </div>
 </div>

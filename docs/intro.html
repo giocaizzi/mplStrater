@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; mplStrater v0.0.1 documentation</title>
+  <title>&lt;no title&gt; &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -90,7 +90,6 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/data.html">StrataFrame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/strata.html">Strata: stratigraphic data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/stratigraphic_map.html">Plot a stratigraphic map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/stratigraphic_map.html#Load-data">Load data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul>
@@ -186,12 +185,12 @@
 <p>This package allows to plot stratigraphic columns with python.</p>
 <p>Passing to <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>:</p>
 <ul class="simple">
-<li><p>some stratigraphic data <strong>without missing layers</strong> stored in a CSV file</p></li>
+<li><p>some stratigraphic data stored in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></p></li>
 <li><p>a <code class="code docutils literal notranslate"><span class="pre">mplStrater.Legend</span></code> object</p></li>
 </ul>
-<p>the package creates a <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code> object in which a
-series of <code class="code docutils literal notranslate"><span class="pre">mplStrater.strata.Columns</span></code> are plotted. Strata columns are inset axes of a main
-<code class="code docutils literal notranslate"><span class="pre">matplotlib.figure</span></code> called with the package initialization.</p>
+<p>the package creates a series of <code class="code docutils literal notranslate"><span class="pre">mplStrater.strata.Columns</span></code> objects
+that can be plotted, all together or singularly, on <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>. The columns
+are plotted with the color and hatch scheme defined providing the legend object.</p>
 <p>Packaged from a hardcoded script in quarantine in december 2021, by <a class="reference external" href="https://github.com/giocaizzi">&#64;giocaizzi</a>.</p>
 
 

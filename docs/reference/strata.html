@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>strata objects &mdash; mplStrater v0.0.1 documentation</title>
+  <title>strata objects &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="StratigraphicMap object" href="stratigraphic_map.html" />
-    <link rel="prev" title="Code Reference" href="index.html" /> 
+    <link rel="prev" title="data objects" href="data.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -92,11 +92,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples/data.html">StrataFrame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/strata.html">Strata: stratigraphic data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/stratigraphic_map.html">Plot a stratigraphic map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/stratigraphic_map.html#Load-data">Load data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#column-class"><code class="docutils literal notranslate"><span class="pre">Column</span></code> class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#legend-class"><code class="docutils literal notranslate"><span class="pre">Legend</span></code> class</a></li>
@@ -202,12 +202,12 @@
 <div class="section" id="column-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Column</span></code> class<a class="headerlink" href="#column-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="mplStrater.Column">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">danger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_qual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.strata.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">danger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_qual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>This objects is the single stratigraphic column.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mplStrater.Column.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mplStrater.strata.Column.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>name of the point</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -217,19 +217,19 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.legend">
-<span class="sig-name descname"><span class="pre">legend</span></span><a class="headerlink" href="#mplStrater.Column.legend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.legend">
+<span class="sig-name descname"><span class="pre">legend</span></span><a class="headerlink" href="#mplStrater.strata.Column.legend" title="Permalink to this definition">¶</a></dt>
 <dd><p>legend object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#mplStrater.Legend" title="mplStrater.strata.Legend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.strata.Legend</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#mplStrater.strata.Legend" title="mplStrater.strata.Legend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.strata.Legend</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.coord">
-<span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#mplStrater.Column.coord" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.coord">
+<span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#mplStrater.strata.Column.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>coords (x,y)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -239,8 +239,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.prof">
-<span class="sig-name descname"><span class="pre">prof</span></span><a class="headerlink" href="#mplStrater.Column.prof" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.prof">
+<span class="sig-name descname"><span class="pre">prof</span></span><a class="headerlink" href="#mplStrater.strata.Column.prof" title="Permalink to this definition">¶</a></dt>
 <dd><p>height (depth) of stratigraphic column, for scaling purposes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -250,8 +250,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.layers">
-<span class="sig-name descname"><span class="pre">layers</span></span><a class="headerlink" href="#mplStrater.Column.layers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.layers">
+<span class="sig-name descname"><span class="pre">layers</span></span><a class="headerlink" href="#mplStrater.strata.Column.layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>ordered list of layers, encoded</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -261,8 +261,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.danger">
-<span class="sig-name descname"><span class="pre">danger</span></span><a class="headerlink" href="#mplStrater.Column.danger" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.danger">
+<span class="sig-name descname"><span class="pre">danger</span></span><a class="headerlink" href="#mplStrater.strata.Column.danger" title="Permalink to this definition">¶</a></dt>
 <dd><p>ordered list of danger, encoded</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -272,8 +272,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.dest">
-<span class="sig-name descname"><span class="pre">dest</span></span><a class="headerlink" href="#mplStrater.Column.dest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.dest">
+<span class="sig-name descname"><span class="pre">dest</span></span><a class="headerlink" href="#mplStrater.strata.Column.dest" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 1</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -283,8 +283,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.am_qual">
-<span class="sig-name descname"><span class="pre">am_qual</span></span><a class="headerlink" href="#mplStrater.Column.am_qual" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.am_qual">
+<span class="sig-name descname"><span class="pre">am_qual</span></span><a class="headerlink" href="#mplStrater.strata.Column.am_qual" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 2</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -294,8 +294,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.am_quant">
-<span class="sig-name descname"><span class="pre">am_quant</span></span><a class="headerlink" href="#mplStrater.Column.am_quant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.am_quant">
+<span class="sig-name descname"><span class="pre">am_quant</span></span><a class="headerlink" href="#mplStrater.strata.Column.am_quant" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 3</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -305,8 +305,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Column.max_scale">
-<span class="sig-name descname"><span class="pre">max_scale</span></span><a class="headerlink" href="#mplStrater.Column.max_scale" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.max_scale">
+<span class="sig-name descname"><span class="pre">max_scale</span></span><a class="headerlink" href="#mplStrater.strata.Column.max_scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>max height of column of dataframe, for scaling purposes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -316,14 +316,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Column.fill_column">
-<span class="sig-name descname"><span class="pre">fill_column</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.fill_column" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.fill_column">
+<span class="sig-name descname"><span class="pre">fill_column</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column.fill_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>prints the single <cite>mplStrater.strata.Column</cite> object onto a <cite>mplStrater.StratigraphicMap</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Column.hardcode_labels">
-<span class="sig-name descname"><span class="pre">hardcode_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.hardcode_labels" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.hardcode_labels">
+<span class="sig-name descname"><span class="pre">hardcode_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column.hardcode_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>hardcode labels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -337,14 +337,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Column.label_column">
-<span class="sig-name descname"><span class="pre">label_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.label_column" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.label_column">
+<span class="sig-name descname"><span class="pre">label_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hardcoding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column.label_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>labels single layers of stratigraphic column</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Column.set_inset_params">
-<span class="sig-name descname"><span class="pre">set_inset_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Column.set_inset_params" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.set_inset_params">
+<span class="sig-name descname"><span class="pre">set_inset_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column.set_inset_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>set inset parameters.</p>
 </dd></dl>
 
@@ -354,12 +354,12 @@
 <div class="section" id="legend-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Legend</span></code> class<a class="headerlink" href="#legend-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="mplStrater.Legend">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">Legend</span></span><a class="headerlink" href="#mplStrater.Legend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Legend">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.strata.</span></span><span class="sig-name descname"><span class="pre">Legend</span></span><a class="headerlink" href="#mplStrater.strata.Legend" title="Permalink to this definition">¶</a></dt>
 <dd><p>This sets the color-hatches profiles of the <cite>mplStrater.strata.Column</cite> object.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="mplStrater.Legend.return_handles">
-<span class="sig-name descname"><span class="pre">return_handles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Legend.return_handles" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Legend.return_handles">
+<span class="sig-name descname"><span class="pre">return_handles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Legend.return_handles" title="Permalink to this definition">¶</a></dt>
 <dd><p>return handles to specified legend elements.</p>
 </dd></dl>
 
@@ -369,8 +369,8 @@
 <div class="section" id="symbology-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Symbology</span></code> class<a class="headerlink" href="#symbology-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="mplStrater.Symbology">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">Symbology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hatches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.Symbology" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Symbology">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.strata.</span></span><span class="sig-name descname"><span class="pre">Symbology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hatches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Symbology" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the symbology definition object for layers of the <cite>mplStrater.strata.Column</cite> object</p>
 <p>Can have either a fill color and/or a hatch.</p>
 <dl class="field-list simple">
@@ -383,8 +383,8 @@
 </dd>
 </dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Symbology.d">
-<span class="sig-name descname"><span class="pre">d</span></span><a class="headerlink" href="#mplStrater.Symbology.d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Symbology.d">
+<span class="sig-name descname"><span class="pre">d</span></span><a class="headerlink" href="#mplStrater.strata.Symbology.d" title="Permalink to this definition">¶</a></dt>
 <dd><p>number coded dictionary of string values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -394,8 +394,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Symbology.colors">
-<span class="sig-name descname"><span class="pre">colors</span></span><a class="headerlink" href="#mplStrater.Symbology.colors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Symbology.colors">
+<span class="sig-name descname"><span class="pre">colors</span></span><a class="headerlink" href="#mplStrater.strata.Symbology.colors" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of colors</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -405,8 +405,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.Symbology.cmap">
-<span class="sig-name descname"><span class="pre">cmap</span></span><a class="headerlink" href="#mplStrater.Symbology.cmap" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Symbology.cmap">
+<span class="sig-name descname"><span class="pre">cmap</span></span><a class="headerlink" href="#mplStrater.strata.Symbology.cmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>cmap</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -431,7 +431,7 @@
         <a href="stratigraphic_map.html" class="btn btn-neutral float-right" title="StratigraphicMap object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Code Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data.html" class="btn btn-neutral float-left" title="data objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
