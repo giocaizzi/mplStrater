@@ -7,15 +7,19 @@
 ![Licende](https://img.shields.io/github/license/giocaizzi/mplStrater)
 ![GitHub issues](https://img.shields.io/github/issues/giocaizzi/mplStrater)
 
-This package provides the possibility to plot geologic stratigraphic columns with a structured labelling system on `matplotlib` figures.
+This package provides the possibility to plot geologic stratigraphic columns with a structured symbology and labelling system on `matplotlib` figures.
 
-Additionally, it allows to use georeferenced rasters as basemap.
+The package allows to use georeferenced rasters as basemap.
 
-![Image](data/temp.png)
+![map](docsrc/source/images/map.png)
+
+Additionally, the package has the capability to just plot the single stratigraphic columns.
+
+![columns](docsrc/source/images/columns.jpeg)
 
 ## Documentation
 
-The documentation can be found [here](https://giocaizzi.github.io/mplStrater/).
+The documentation with examples can be found [here](https://giocaizzi.github.io/mplStrater/).
 
 ## Installation (from source)
 
