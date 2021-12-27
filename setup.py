@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import mplStrater
 
 # read the contents of your README file
 from pathlib import Path
@@ -8,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='mplStrater',
-    version=mplStrater.__version__,
+    version="0.0.2",
     description="plot geologic stratigraphic columns with python",
     author='giocaizzi',
     author_email='giocaizzi@gmail.com',

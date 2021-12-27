@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>StratigraphicMap object &mdash; mplStrater v0.0.1 documentation</title>
+  <title>StratigraphicMap object &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -91,11 +91,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples/data.html">StrataFrame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/strata.html">Strata: stratigraphic data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/stratigraphic_map.html">Plot a stratigraphic map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/stratigraphic_map.html#Load-data">Load data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
 </ul>
@@ -193,14 +193,14 @@
 <div class="section" id="stratigraphicmap-object">
 <h1><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object<a class="headerlink" href="#stratigraphicmap-object" title="Permalink to this headline">¶</a></h1>
 <p>This is the core of the package. This is the <cite>matplotlib.Figure</cite>.</p>
-<span class="target" id="module-mplStrater"></span><dl class="py class">
+<dl class="py class">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">StratigraphicMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basemap_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_kwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_hardcoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class is the core of mplStrater package.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>strataframe</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code>) – a StrataFrame object containing data to be plotted.</p></li>
+<li><p><strong>strataframe</strong> (<a class="reference internal" href="data.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a>) – a StrataFrame object containing data to be plotted.</p></li>
 <li><p><strong>path_to_data</strong> (<em>str</em>) – path to stratigraphic information stored in csv file</p></li>
 <li><p><strong>basemap_path</strong> (<em>str</em>) – path to georeferenced raster to use as basemap.</p></li>
 </ul>
@@ -212,7 +212,7 @@
 <dd><p>the linked StrataFrame object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="data.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>

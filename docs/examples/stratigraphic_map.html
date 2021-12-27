@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plot a stratigraphic map &mdash; mplStrater v0.0.1 documentation</title>
+  <title>Plot a stratigraphic map &mdash; mplStrater v0.0.2 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                v0.0.1
+                v0.0.2
               </div>
             
           
@@ -442,7 +442,7 @@ div.rendered_html tbody tr:hover {
 <h1>Plot a stratigraphic map<a class="headerlink" href="#Plot-a-stratigraphic-map" title="Permalink to this headline">¶</a></h1>
 <p>import all required packages</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -450,7 +450,9 @@ div.rendered_html tbody tr:hover {
 <span class="o">%</span><span class="k">autoreload</span> 2
 <span class="kn">from</span> <span class="nn">mplStrater.data</span> <span class="kn">import</span> <span class="n">StrataFrame</span>
 <span class="kn">from</span> <span class="nn">mplStrater</span> <span class="kn">import</span> <span class="n">StratigraphicMap</span>
-<span class="kn">from</span> <span class="nn">mplStrater</span> <span class="kn">import</span> <span class="n">Legend</span>
+<span class="kn">from</span> <span class="nn">mplStrater.strata</span> <span class="kn">import</span> <span class="n">Legend</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -465,7 +467,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 <p>At the moment, the example requires a temporary hardcode from the original script that inspired the package.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -477,7 +479,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -502,13 +504,118 @@ The autoreload extension is already loaded. To reload it, use:
 <div class="section" id="Load-data">
 <h2>Load data<a class="headerlink" href="#Load-data" title="Permalink to this headline">¶</a></h2>
 <p>Load the example data and specify its <code class="docutils literal notranslate"><span class="pre">epsg</span></code> code.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../data/example.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>punto</th>
+      <th>campione</th>
+      <th>da</th>
+      <th>a</th>
+      <th>area</th>
+      <th>matrice</th>
+      <th>pericolosita</th>
+      <th>sostanza_pericolosità</th>
+      <th>smaltibilità_riutilizzo</th>
+      <th>amianto_qualitativa</th>
+      <th>amianto_quantitativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.6</td>
+      <td>2A</td>
+      <td>Riporto conforme</td>
+      <td>_</td>
+      <td>NaN</td>
+      <td>_</td>
+      <td>_</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>2</td>
+      <td>0.6</td>
+      <td>2.0</td>
+      <td>2A</td>
+      <td>Assenza campione</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>_</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>204026.93</td>
+      <td>4973197.522</td>
+      <td>258.399</td>
+      <td>SI01</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>3.5</td>
+      <td>2A</td>
+      <td>Rifiuto</td>
+      <td>Pericoloso</td>
+      <td>PIOMBO</td>
+      <td>IA</td>
+      <td>non rilevato</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">sf</span><span class="o">=</span><span class="n">StrataFrame</span><span class="p">(</span>
-    <span class="n">path_to_data</span><span class="o">=</span><span class="s2">&quot;../../../data/example.csv&quot;</span><span class="p">,</span>
+    <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">32633</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -519,7 +626,7 @@ The autoreload extension is already loaded. To reload it, use:
 <p>Create a stratigraphic map, providing the <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> object previously loaded.</p>
 <p>Addittionally it is possible to specify further parameters, such as * the path <code class="docutils literal notranslate"><span class="pre">basemap_path</span></code> to the basemap * <code class="docutils literal notranslate"><span class="pre">fig_kwd</span></code> : keywords to set figure proprieties * <code class="docutils literal notranslate"><span class="pre">label_hardcode</span></code> : load hardcoding dictionary</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -537,7 +644,7 @@ The autoreload extension is already loaded. To reload it, use:
 <h2>Define a <code class="docutils literal notranslate"><span class="pre">Legend</span></code><a class="headerlink" href="#Define-a-Legend" title="Permalink to this headline">¶</a></h2>
 <p>Define legend.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -551,7 +658,7 @@ The autoreload extension is already loaded. To reload it, use:
 <p>By calling <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method it is possible to plot the stratigraphic columns specified in the database.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method allows to save the plot.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -564,7 +671,7 @@ The autoreload extension is already loaded. To reload it, use:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_stratigraphic_map_11_0.png" src="../_images/examples_stratigraphic_map_11_0.png" />
+<img alt="../_images/examples_stratigraphic_map_12_0.png" src="../_images/examples_stratigraphic_map_12_0.png" />
 </div>
 </div>
 </div>

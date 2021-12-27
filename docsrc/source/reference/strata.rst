@@ -7,20 +7,20 @@ This objects are functional to plot the ``mplStrater.StratigraphicMap`` objects.
 ``Column`` class
 ================
 
-.. autoclass:: mplStrater.Column
+.. autoclass:: mplStrater.strata.Column
    :members:
    :undoc-members:
 
 ``Legend`` class
 ================
 
-.. autoclass:: mplStrater.Legend
+.. autoclass:: mplStrater.strata.Legend
    :members:
    :undoc-members:
 
 ``Symbology`` class
 ===================
 
-.. autoclass:: mplStrater.Symbology
+.. autoclass:: mplStrater.strata.Symbology
    :members:
    :undoc-members:
