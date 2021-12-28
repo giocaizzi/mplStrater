@@ -5,22 +5,10 @@ import pandas as pd
 from mplStrater.data import StrataFrame
 import geopandas as gp
 import pytest
+import pyproj 
 
 #first three rows of repository example
-example={'x': {0: 204026.93, 1: 204026.93, 2: 204026.93},
-'y': {0: 4973197.522, 1: 4973197.522, 2: 4973197.522},
-'z': {0: 258.399, 1: 258.399, 2: 258.399},
-'punto': {0: 'SI01', 1: 'SI01', 2: 'SI01'},
-'campione': {0: '1', 1: '2', 2: '2'},
-'da': {0: 0.0, 1: 0.6, 2: 2.0},
-'a': {0: 0.6, 1: 2.0, 2: 3.5},
-'area': {0: '2A', 1: '2A', 2: '2A'},
-'matrice': {0: 'Riporto conforme', 1: 'Assenza campione', 2: 'Rifiuto'},
-'pericolosita': {0: '_', 1: '_', 2: 'Pericoloso'},
-'sostanza_pericolosità': {0: np.nan, 1: '_', 2: 'PIOMBO'},
-'smaltibilità_riutilizzo': {0: '_', 1: '_', 2: 'IA'},
-'amianto_qualitativa': {0: '_', 1: '_', 2: 'non rilevato'},
-'amianto_quantitativa': {0: -1, 1: -1, 2: -1}}
+example_dataset="tests/test.csv"
 epsg=32633
 
 def partial_init(self,df,epsg):
@@ -30,15 +18,11 @@ def partial_init(self,df,epsg):
 class TestStrataFrame(unittest.TestCase):
 
     def setUp(self):
-        self.df=pd.DataFrame(example)
+        self.df=pd.read_csv(example_dataset)
 
     def test_init_fail(self):
         d={}
         self.assertRaises(ValueError,StrataFrame,d,epsg)
-    
-    # def test_init_correct(self):
-    #     sf=StrataFrame(self.df,epsg)
-    #     self.assertIsInstance(sf.strataframe,gp.GeoDataFrame)
 
     def test_group_layers(self):
         profondita=StrataFrame.group_layers(self.df).reset_index()
@@ -52,7 +36,6 @@ class TestStrataFrame(unittest.TestCase):
         #check that there are no duplicates
         self.assertEqual(len(profondita_l), len(set(profondita_l)))
 
-    @pytest.mark.wip
     def test_group_data(self):
         data=StrataFrame.group_data(self.df,"matrice","lista_matrici").reset_index()
         data.set_index("punto",inplace=True)
@@ -60,11 +43,33 @@ class TestStrataFrame(unittest.TestCase):
         original_len=len(self.df[self.df["punto"]=="SI01"])
         #check that has one more value than the original
         self.assertEqual(len(data_list),original_len+1)
-    
-    # @patch.object(StrataFrame,"__init__",partial_init)
-    # def test_patched_init(self):
-    #     sf=StrataFrame(self.df,epsg)
-    #     self.assertRaises(AttributeError,sf.strataframe)
+
+    @patch.object(StrataFrame,"__init__",partial_init)
+    def test_patched_init(self):
+        sf=StrataFrame(self.df,epsg)
+        #lambda function otherwise throws attribute error
+        self.assertRaises(AttributeError,lambda: sf.strataframe)
+
+    @pytest.mark.wip
+    @patch.object(StrataFrame,"__init__",partial_init)
+    def test_set_df(self):
+        sf=StrataFrame(self.df,epsg)
+        sf.set_df()
+        #test is df
+        self.assertIsInstance(sf.strataframe,pd.DataFrame)
+        #test points are the same
+        punti_in=self.df.punto.unique().tolist()
+        punti_out=sf.strataframe.punto.unique().tolist()
+        self.assertEqual(len(punti_in),len(punti_out))
+        
+    @pytest.mark.wip
+    @patch.object(StrataFrame,"__init__",partial_init)
+    def test_geo_df(self):
+        sf=StrataFrame(self.df,epsg)
+        sf.set_df()
+        sf.geodf()
+        #crs is a pyproj object
+        self.assertIsInstance(sf.strataframe.crs,pyproj.CRS)
 
 if __name__=="__main__":
     unittest.main()

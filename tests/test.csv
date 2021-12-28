@@ -1,0 +1,21 @@
+,x,y,z,punto,campione,da,a,area,matrice,pericolosita,sostanza_pericolosità,smaltibilità_riutilizzo,amianto_qualitativa,amianto_quantitativa
+0,204026.93,4973197.522,258.399,SI01,1,0.0,0.6,2A,Riporto conforme,_,,_,_,-1
+1,204026.93,4973197.522,258.399,SI01,2,0.6,2.0,2A,Assenza campione,_,_,_,_,-1
+2,204026.93,4973197.522,258.399,SI01,2,2.0,3.5,2A,Rifiuto,Pericoloso,PIOMBO,IA,non rilevato,-1
+3,204026.93,4973197.522,258.399,SI01,3,3.5,5.2,2A,Assenza campione,_,_,_,_,-1
+4,204026.93,4973197.522,258.399,SI01,3,5.2,6.2,2A,Rifiuto,Pericoloso,PIOMBO,NP,non rilevato,-1
+5,204026.93,4973197.522,258.399,SI01,4,6.2,8.0,2A,Assenza campione,_,_,_,_,-1
+6,204026.93,4973197.522,258.399,SI01,4,8.0,9.0,2A,Terreno conforme,_,_,_,_,-1
+7,204026.93,4973197.522,258.399,SI01,5,9.0,10.0,2A,Terreno conforme,_,_,_,_,-1
+8,204008.591,4973148.94,256.28,SI02,0,0.0,2.0,2A,Riporto non conforme,Non pericoloso,_,NP,non rilevato,-1
+9,204008.591,4973148.94,256.28,SI02,1,2.0,3.0,2A,Assenza campione,_,_,_,_,-1
+10,204008.591,4973148.94,256.28,SI02,2,3.0,6.0,2A,Rifiuto,Non pericoloso,_,NP,non rilevato,-1
+11,204008.591,4973148.94,256.28,SI02,3,6.0,6.6,2A,Assenza campione,_,_,_,_,-1
+12,204008.591,4973148.94,256.28,SI02,3,6.6,8.5,2A,Rifiuto,Non pericoloso,_,NP,non rilevato,-1
+13,204008.734,4973122.605,255.309,SI03,1,0.0,1.5,2A,Assenza campione,_,_,_,_,-1
+14,204008.734,4973122.605,255.309,SI03,1,1.5,3.4,2A,Riporto non conforme,Non pericoloso,_,NP,non rilevato,-1
+15,204008.734,4973122.605,255.309,SI03,2,3.4,5.0,2A,Assenza campione,_,_,_,_,-1
+16,204008.734,4973122.605,255.309,SI03,2,5.0,6.0,2A,Riporto non conforme,Non pericoloso,_,NP,non rilevato,-1
+17,204008.734,4973122.605,255.309,SI03,3,6.0,8.4,2A,Rifiuto,Non pericoloso,_,NP,non rilevato,-1
+18,204008.734,4973122.605,255.309,SI03,4,8.4,8.5,2A,Assenza campione,_,_,_,_,-1
+19,204008.734,4973122.605,255.309,SI03,4,8.5,9.0,2A,Terreno conforme,_,,_,non rilevato,-1
