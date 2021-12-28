@@ -1,9 +1,14 @@
 import unittest
 import numpy as np
+import pandas as pd
+from mplStrater.data import StrataFrame
+import geopandas as gp
 
-class TestStrataFrame:
+class TestStrataFrame(unittest.TestCase):
+
+    
     #first three rows of repository example
-    exaple={'x': {0: 204026.93, 1: 204026.93, 2: 204026.93},
+    example={'x': {0: 204026.93, 1: 204026.93, 2: 204026.93},
     'y': {0: 4973197.522, 1: 4973197.522, 2: 4973197.522},
     'z': {0: 258.399, 1: 258.399, 2: 258.399},
     'punto': {0: 'SI01', 1: 'SI01', 2: 'SI01'},
@@ -17,6 +22,18 @@ class TestStrataFrame:
     'smaltibilità_riutilizzo': {0: '_', 1: '_', 2: 'IA'},
     'amianto_qualitativa': {0: '_', 1: '_', 2: 'non rilevato'},
     'amianto_quantitativa': {0: -1, 1: -1, 2: -1}}
+    epsg=32633
 
+    def setUp(self):
+        self.df=pd.DataFrame(self.example)
+
+    def test_init_fail(self):
+        d={}
+        self.assertRaises(ValueError,StrataFrame,d,self.epsg)
+    
     def test_init(self):
-        pass
+        sf=StrataFrame(self.df,self.epsg)
+        self.assertIsInstance(sf.strataframe,gp.GeoDataFrame)
+
+if __name__=="__main__":
+    unittest.main()
