@@ -14,11 +14,11 @@ This package provides the possibility to plot geologic stratigraphic columns wit
 
 The package allows to use georeferenced rasters as basemap.
 
-![map](docsrc/source/images/map.png)
+![map](https://github.com/giocaizzi/mplStrater/blob/main/docsrc/source/images/map.png?raw=true)
 
 Additionally, the package has the capability to just plot the single stratigraphic columns.
 
-![columns](docsrc/source/images/columns.jpeg)
+![columns](https://github.com/giocaizzi/mplStrater/blob/main/docsrc/source/images/columns.jpeg?raw=true)
 
 ## Documentation
 
