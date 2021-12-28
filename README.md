@@ -1,5 +1,8 @@
 # mplStrater
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mplStrater)
+![PyPI](https://img.shields.io/pypi/v/mplStrater?color=blue)
+
 ![GitHub Release Date](https://img.shields.io/github/release-date/giocaizzi/mplStrater)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main)
 ![Codecov](https://img.shields.io/codecov/c/github/giocaizzi/mplStrater)
@@ -21,17 +24,13 @@ Additionally, the package has the capability to just plot the single stratigraph
 
 The documentation with examples can be found [here](https://giocaizzi.github.io/mplStrater/).
 
+## Installation with pip
+
+```
+pip install
+```
+
 ## Installation (from source)
-
-### Dependencies
-
-Install dependencies in `requirements.txt` with `conda` or `pip`.
-
-```
-pip install -r requirements.txt
-```
-
-### Get code and install
 
 Clone code from github and install with `pip`.
 
