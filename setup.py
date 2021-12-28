@@ -7,13 +7,14 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='mplStrater',
-    version="0.0.2",
+    version="0.0.3",
     description="plot geologic stratigraphic columns with python",
-    author='giocaizzi',
-    author_email='giocaizzi@gmail.com',
-    url='https://github.com/giocaizzi/mplStrater',
     long_description_content_type='text/markdown',
     long_description=long_description,
+    url='https://github.com/giocaizzi/mplStrater',
+    author='giocaizzi',
+    author_email='giocaizzi@gmail.com',
+    license="MIT",
     packages=find_packages(include=['mplStrater','mplStrater/*']),
     setup_requires=[],
     tests_require=['pytest'],
@@ -24,8 +25,7 @@ setup(
         "pandas",
         "rasterio",
         "rio_color"
-        ],
-        
+        ],   
     extras_require={
         "docs":[
             "sphinx",
@@ -36,6 +36,13 @@ setup(
         "dev":[],
         'test':['pytest',"pytest-cov"],
         },
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+    ],
     project_urls={
         'Documentation':'https://giocaizzi.github.io/mplStrater/',
         'Bug Reports': 'https://github.com/giocaizzi/mplStrater/issues',

@@ -11,7 +11,7 @@ from mplStrater.strata import Column
 import matplotlib.patheffects as pe
 from matplotlib.gridspec import GridSpec
 
-__version__="v0.0.2"
+__version__="0.0.3"
 
 class StratigraphicMap:
     """
