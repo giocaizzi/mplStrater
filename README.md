@@ -1,8 +1,8 @@
 # mplStrater
 
 ![GitHub Release Date](https://img.shields.io/github/release-date/giocaizzi/mplStrater)
-![Build status](https://app.travis-ci.com/giocaizzi/mplStrater.svg?branch=main)
-[![Coverage Status](https://coveralls.io/repos/github/giocaizzi/mplStrater/badge.svg?branch=main)](https://coveralls.io/github/giocaizzi/mplStrater?branch=main)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main)
+![Codecov](https://img.shields.io/codecov/c/github/giocaizzi/mplStrater)
 [![Requirements Status](https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main)](https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main)
 ![Licende](https://img.shields.io/github/license/giocaizzi/mplStrater)
 ![GitHub issues](https://img.shields.io/github/issues/giocaizzi/mplStrater)
