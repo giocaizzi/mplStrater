@@ -2,7 +2,7 @@ name: mplStrater
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop]
   pull_request:
     branches: [ main ]
 
@@ -34,4 +34,4 @@ jobs:
     - name: "Upload coverage to Codecov"
       uses: codecov/codecov-action@v2
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        token: ${{ secrets.CODECOV_TOKEN }}
