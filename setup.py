@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='mplStrater',
-    version="0.0.3",
+    version="0.0.4",
     description="plot geologic stratigraphic columns with python",
     long_description_content_type='text/markdown',
     long_description=long_description,
