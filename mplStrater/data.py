@@ -32,12 +32,12 @@ class StrataFrame:
         """
         process the dataframe to get the desired information to plot the data.
         """
-        profondita = self._group_layers()
-        matrici = self._group_data("matrice","lista_matrici")
-        pericolosita = self._group_data('pericolosita',"lista_pericolo")
-        destino = self._group_data("smaltibilità_riutilizzo","destino")
-        amianto_qual=self._group_data("amianto_qualitativa","amianto_qual")
-        amianto_quant=self._group_data("amianto_quantitativa","amianto_quant")
+        profondita = _group_layers(self.df)
+        matrici = _group_data(self.df,"matrice","lista_matrici")
+        pericolosita = _group_data(self.df,'pericolosita',"lista_pericolo")
+        destino = _group_data(self.df,"smaltibilità_riutilizzo","destino")
+        amianto_qual=_group_data(self.df,"amianto_qualitativa","amianto_qual")
+        amianto_quant=_group_data(self.df,"amianto_quantitativa","amianto_quant")
 
         #merged dfs
         merged=pd.merge(matrici,profondita,on=['punto','x','y'])
@@ -59,28 +59,32 @@ class StrataFrame:
         self.strataframe=gp.GeoDataFrame(self.strataframe, geometry=gp.points_from_xy(self.strataframe.x,self.strataframe.y))
         self.strataframe=self.strataframe.set_crs(epsg=self.epsg)
 
-    def _group_layers(self):
-        """
-        group layer data in required format.
-        """
-        profondita=self.df.groupby(['punto','x','y'])[['da','a']].agg(list)
-        profondita["layers"]=profondita["da"]+profondita["a"]
-        profondita=profondita.drop(["da","a"],axis=1)
-        profondita['layers'] = profondita['layers'].apply(lambda x: np.unique(x))
-        return profondita
+def _group_layers(df):
+    """
+    group layer data in required format.
 
-    def _group_data(self,colname1,colname2):
-        """
-        group data in required format.
+    Arguments:
+        df (:obj:`pandas.DataFrame`): dataframe of stratigraphic data.
+    """
+    profondita=df.groupby(['punto','x','y'])[['da','a']].agg(list)
+    profondita["layers"]=profondita["da"]+profondita["a"]
+    profondita=profondita.drop(["da","a"],axis=1)
+    profondita['layers'] = profondita['layers'].apply(lambda x: np.unique(x))
+    return profondita
 
-        Arguments:
-            colname1,colname2 (str, :obj:`list` of :obj:`str`): column names for `pandas.groupBy`
-        """
-        #df con lista data
-        data=self.df.groupby(['punto','x','y'])[colname1].apply(list).reset_index(name=colname2)
-        #duplicazione ultimo elemento per pareggiare i conti
-        for i in range(len(data)):
-                temp=data.loc[i,colname2]
-                temp.append(temp[-1])
-                data.at[i,colname2]=temp
-        return data
+def _group_data(df,colname1,colname2):
+    """
+    group data in required format.
+
+    Arguments:
+        df (:obj:`pandas.DataFrame`): dataframe of stratigraphic data.
+        colname1,colname2 (str, :obj:`list` of :obj:`str`): column names for `pandas.groupBy`
+    """
+    #df con lista data
+    data=df.groupby(['punto','x','y'])[colname1].apply(list).reset_index(name=colname2)
+    #duplicazione ultimo elemento per pareggiare i conti
+    for i in range(len(data)):
+            temp=data.loc[i,colname2]
+            temp.append(temp[-1])
+            data.at[i,colname2]=temp
+    return data
