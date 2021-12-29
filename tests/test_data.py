@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import patch
-import numpy as np
 import pandas as pd
-from pandas.core.frame import DataFrame
 from mplStrater.data import StrataFrame
 import geopandas as gp
 import pytest
