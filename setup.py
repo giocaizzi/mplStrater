@@ -26,16 +26,16 @@ setup(
         "rasterio",
         "rio_color"
         ],   
-    extras_require={
-        "docs":[
-            "sphinx",
-            "nbsphinx",
-            "myst-parser",
-            "sphinx_rtd_theme",
-            "docutils==0.16"],
-        "dev":[],
-        'test':['pytest',"pytest-cov"],
-        },
+    # extras_require={
+    #     "docs":[
+    #         "sphinx",
+    #         "nbsphinx",
+    #         "myst-parser",
+    #         "sphinx_rtd_theme",
+    #         "docutils==0.16"],
+    #     "dev":[],
+    #     'test':['pytest',"pytest-cov"],
+    #     },
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
