@@ -26,16 +26,20 @@ setup(
         "rasterio",
         "rio_color"
         ],   
-    # extras_require={
-    #     "docs":[
-    #         "sphinx",
-    #         "nbsphinx",
-    #         "myst-parser",
-    #         "sphinx_rtd_theme",
-    #         "docutils==0.16"],
-    #     "dev":[],
-    #     'test':['pytest',"pytest-cov"],
-    #     },
+    extras_require={
+        "docs":[
+            "sphinx",
+            "nbsphinx",
+            "myst-parser",
+            "sphinx_rtd_theme",
+            # "docutils==0.16" 
+            # # otherwise requires.io gives out-of-date, but its
+            # # only for docs building. It is required because of a bug 
+            # # not being solved between rdt-nbsphinx
+            ],
+        "dev":[],
+        'test':['pytest',"pytest-cov"],
+        },
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
