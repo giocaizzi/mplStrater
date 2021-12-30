@@ -33,7 +33,7 @@ class TestLegend(unittest.TestCase):
     def test_init(self):
         #matrix and hatches are symbology 
         l=Legend()
-        self.assertIsInstance(l.matrix,Symbology)
+        self.assertIsInstance(l.fill,Symbology)
         self.assertIsInstance(l.hatches,Symbology)
 
 

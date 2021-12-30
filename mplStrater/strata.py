@@ -40,40 +40,49 @@ class Legend:
     This sets the color-hatches profiles of the `mplStrater.strata.Column` object.
     """
 
-    def __init__(self):
-        self._set_matrix()
-        self._set_hatch()
+    def __init__(self,fill_dict,hatch_dict):
+        self._set_fill(fill_dict)
+        self._set_hatches(hatch_dict)
         pass
 
-    def _set_matrix(self):
+    def _set_fill(self,dict):
         """
-        Set layer matrix symbology.
+        Set layer fill symbology.
         """
-        d={'Terreno conforme': 1, 'Riporto conforme': 2, 'Riporto non conforme': 3, 'Rifiuto': 4, 'Assenza campione':5}
-        colors = ['lightgreen', 'darkgreen', 'orange', 'red',"white"]
-        self.matrix=Symbology(d,colors=colors)
+        # d={'Terreno conforme': 1, 'Riporto conforme': 2, 'Riporto non conforme': 3, 'Rifiuto': 4, 'Assenza campione':5}
+        # colors = ['lightgreen', 'darkgreen', 'orange', 'red',"white"]
+        d,values=self._unpack_dict(dict)
+        self.fill=Symbology(d,colors=values)
 
-    def _set_hatch(self):
+    def _set_hatches(self,dict):
         """
         Set layer hatch symbology.
         """
-        d={"Non pericoloso":1, "Pericoloso":2, "_":3}
-        hatches=["","xxxxxxxxx",""]
-        self.hatches=Symbology(d,hatches=hatches)
+        # d={"Non pericoloso":1, "Pericoloso":2, "_":3}
+        # hatches=["","xxxxxxxxx",""]
+        d,values=self._unpack_dict(dict)
+        self.hatches=Symbology(d,hatches=values)
     
-    def return_handles(self):
+    def _unpack_dict(self,d):
         """
-        return handles to specified legend elements.
+        sets dictionary format for plotting methods.
         """
-        #legenda matrix
-        matrix_h = [Patch(facecolor=col, label=k,linewidth=0.4,edgecolor="black") for k, col in zip(self.matrix.d.keys(), self.hatches.d.colors)]
-        #legenda hatch
-        #override legend due to temporary definition
-        d3={"Non pericoloso":1, "Pericoloso":2}
-        hatches=["","xxxxxxxxx"]
-        hatches_h=[Patch(hatch=hatch,facecolor="red",linewidth=0.4,edgecolor="k",label=k) for k, hatch in zip(d3.keys(), hatches)]
+        values=list(d.values())
+        return dict(zip(d.keys(),range(1,len(d)+1))),values
+    
+    # def return_handles(self):
+    #     """
+    #     return handles to specified legend elements.
+    #     """
+    #     #legenda matrix
+    #     matrix_h = [Patch(facecolor=col, label=k,linewidth=0.4,edgecolor="black") for k, col in zip(self.fill.d.keys(), self.hatches.d.colors)]
+    #     #legenda hatch
+    #     #override legend due to temporary definition
+    #     d3={"Non pericoloso":1, "Pericoloso":2}
+    #     hatches=["","xxxxxxxxx"]
+    #     hatches_h=[Patch(hatch=hatch,facecolor="red",linewidth=0.4,edgecolor="k",label=k) for k, hatch in zip(d3.keys(), hatches)]
         
-        return matrix_h,hatches_h
+    #     return matrix_h,hatches_h
 
 class Column:
     """
@@ -153,10 +162,10 @@ class Column:
         #matrici
         polycollection=self.inset.pcolormesh(
             [0, 1], self.df['layers'],
-            self.df['fill'][:-1].map(self.legend.matrix.d).to_numpy().reshape(-1, 1),
-            cmap=self.legend.matrix.cmap,
+            self.df['fill'][:-1].map(self.legend.fill.d).to_numpy().reshape(-1, 1),
+            cmap=self.legend.fill.cmap,
             vmin=1,
-            vmax=len(self.legend.matrix.colors),linewidth=0.01,edgecolor="k"
+            vmax=len(self.legend.fill.colors),linewidth=0.01,edgecolor="k"
         )
 
         #hatches
