@@ -134,7 +134,7 @@ class StratigraphicMap:
         ####punti
         self.df.plot(ax=ax,color="black",markersize=8)
         #labels
-        for x, y, label in zip(self.df.geometry.x, self.df.geometry.y, self.df.punto):
+        for x, y, label in zip(self.df.geometry.x, self.df.geometry.y, self.df.ID):
             ax.annotate(
                 label,
                 xy=(x, y),
@@ -165,18 +165,24 @@ class StratigraphicMap:
         """
         #stratigraphy columns
         for i in range(len(self.df)):
-            c=Column(ax,legend,
-                self.df.loc[i,"punto"],
+            c=Column(
+                #figure
+                ax,legend,
+                #id
+                self.df.loc[i,"ID"],
+                #coords
                 (self.df.loc[i,"x"],self.df.loc[i,"y"]),
+                #scale
+                self.df.loc[i,"scale"],
+                self.strataframe.max_depth,
+                #stratigraphic data
                 self.df.loc[i,"layers"],
-                self.df.loc[i,"lista_matrici"],
-                self.df.loc[i,"lista_pericolo"],
-                self.df.loc[i,"destino"],
-                self.df.loc[i,"scala"],
-                self.df.loc[i,"amianto_qual"],
-                self.df.loc[i,"amianto_quant"],
-                self.strataframe.max_profondita
-            )
+                self.df.loc[i,"fill_list"],
+                self.df.loc[i,"hatch_list"],
+                #labels
+                self.df.loc[i,"lbl1_list"],
+                self.df.loc[i,"lbl2_list"],
+                self.df.loc[i,"lbl3_list"])
             c.fill_column()
             c.set_inset_params()
             c.label_column(hardcoding=self.label_hardcoding)

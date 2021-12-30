@@ -80,28 +80,30 @@ class Column:
     This objects is the single stratigraphic column.
 
     Attributes:
-        name (str): name of the point
+        ax (:obj:`matplotlib.axes`): axes in which plot column
         legend(:obj:`mplStrater.strata.Legend`): legend object
+        id (str): id of the point
         coord (:obj:`tuple`): coords (x,y)
-        prof (float): height (depth) of stratigraphic column, for scaling purposes
-        layers (list): ordered list of layers, encoded
-        danger (list): ordered list of danger, encoded
-        dest (str): label 1
-        am_qual (str): label 2
-        am_quant (str): label 3
-        max_scale (float): max height of column of dataframe, for scaling purposes
+        scale (float): scale of column
+        max_scale (float): scale of most deep column (for scaling)
+        layers (list): list of layers interfaces 
+        fill_list (list): ordered list of layers
+        hatch_list (list): ordered list of hatches
+        lbl1 (str): label 1
+        lbl2 (str): label 2
+        lbl3 (str): label 3
     """
 
-    def __init__(
-            self,
+    def __init__(self,
             ax,legend,
-            name,
+            id,
             coord,
-            prof,
+            scale,
+            max_scale,
             layers,
-            danger,
-            dest,scale,am_qual,am_quant,
-            max_scale
+            fill_list,
+            hatch_list,
+            lbl1_list,lbl2_list,lbl3_list
             ):
         
         #default anchor it upper left
@@ -109,7 +111,7 @@ class Column:
 
         #PROPRIETIES
         self.legend=legend
-        self.name=name
+        self.id=id
 
         #INSET AXES
         self.inset = inset_axes(ax,
@@ -120,12 +122,12 @@ class Column:
                     loc=loc)  # loc=lower left corner
         #DATAFRAME
         self.df=pd.DataFrame({
-            'profondita': prof,#list
-            'matrice': layers,
-            "pericolo":danger,
-            "destino":dest,
-            "am_qual":am_qual,
-            "am_quant":am_quant
+            'layers': layers,#list
+            'fill': fill_list,
+            "hatch":hatch_list,
+            "lbl1":lbl1_list,
+            "lbl2":lbl2_list,
+            "lbl3":lbl3_list
         })
 
     def set_inset_params(self):
@@ -138,8 +140,8 @@ class Column:
         
         self.inset.tick_params(length=0,labelsize=3,pad=1)
         self.inset.set_xticks([])  # hide ticks on the x-axis
-        up_lim=self.df.profondita.iat[0]
-        down_lim=self.df.profondita.iat[-1]
+        up_lim=self.df.layers.iat[0]
+        down_lim=self.df.layers.iat[-1]
         self.inset.set_yticks([up_lim,down_lim])
         self.inset.invert_yaxis() 
 
@@ -150,15 +152,15 @@ class Column:
         """
         #matrici
         polycollection=self.inset.pcolormesh(
-            [0, 1], self.df['profondita'],
-            self.df['matrice'][:-1].map(self.legend.matrix.d).to_numpy().reshape(-1, 1),
+            [0, 1], self.df['layers'],
+            self.df['fill'][:-1].map(self.legend.matrix.d).to_numpy().reshape(-1, 1),
             cmap=self.legend.matrix.cmap,
             vmin=1,
             vmax=len(self.legend.matrix.colors),linewidth=0.01,edgecolor="k"
         )
 
         #hatches
-        pericolosita_val=self.df["pericolo"][:-1].map(self.legend.hatches.d).to_numpy()
+        pericolosita_val=self.df["hatch"][:-1].map(self.legend.hatches.d).to_numpy()
         # print(pericolosita_val)
         for path, d3_val in zip(polycollection.get_paths(),pericolosita_val):
             hatch=self.legend.hatches.hatches[d3_val-1]
@@ -183,12 +185,12 @@ class Column:
         """
         #check if 
         if hardcoding is not None:
-            if self.name in hardcoding:
+            if self.id in hardcoding:
                 #move labels up or down
-                for key in hardcoding[self.name]["movetext"]:
-                    locations[int(key)]=locations[int(key)]+float(hardcoding[self.name]["movetext"][key])
-                if hardcoding[self.name]["side"]!="":
-                    side=hardcoding[self.name]["side"]
+                for key in hardcoding[self.id]["movetext"]:
+                    locations[int(key)]=locations[int(key)]+float(hardcoding[self.id]["movetext"][key])
+                if hardcoding[self.id]["side"]!="":
+                    side=hardcoding[self.id]["side"]
         return locations,side
 
     def _set_oppside(self,side):
@@ -211,12 +213,12 @@ class Column:
         side="left"
 
         #get labels
-        label_destino=self.df["destino"].to_list()[0:-1]
-        label_am_qual=self.df["am_qual"].to_list()[0:-1]
-        label_am_quant=self.df["am_quant"].to_list()[0:-1]
+        lbl1=self.df["lbl1"].to_list()[0:-1]
+        lbl2=self.df["lbl2"].to_list()[0:-1]
+        lbl3=self.df["lbl3"].to_list()[0:-1]
 
         #get positions
-        label_positions=np.array(self.df["profondita"].to_list())
+        label_positions=np.array(self.df["layers"].to_list())
         label_positions=np.convolve(label_positions,np.ones(2),"valid")/2
         label_positions=label_positions.tolist()
 
@@ -231,13 +233,13 @@ class Column:
         else:
             raise ValueError("side not recognized.")
 
-        for pos,lbl,am1,am2 in zip(label_positions,label_destino,label_am_qual,label_am_quant):
-            if lbl!="_":
+        for pos,l1,l2,l3 in zip(label_positions,lbl1,lbl2,lbl3):
+            if l1!="_":
                 #complex label
-                lbl = self._compose_label(lbl, am1, am2)
+                l1 = self._compose_label(l1, l2, l3)
                 #draw label
                 self.inset.annotate(
-                    lbl,
+                    l1,
                     xy=(0, pos),
                     xytext=xytext,
                     fontsize=4,
@@ -252,14 +254,14 @@ class Column:
                     )
                 )
 
-    def _compose_label(self, lbl, am1, am2):
+    def _compose_label(self, l1, l2, l3):
         """
         compose complex labels from three strings.
         """
-        if am1=="non rilevato":
-            lbl=lbl+" (Am: ass.)"
-        if am1=="rilevato" and am2==0:
-            lbl=lbl+" (Am: <LR)"
-        elif am1=="rilevato" and am2>0:
-            lbl=lbl+f" (Am: {am2} mg/kg)"
-        return lbl
+        if l2=="non rilevato":
+            l1=l1+" (Am: ass.)"
+        if l2=="rilevato" and l3==0:
+            l1=l1+" (Am: <LR)"
+        elif l2=="rilevato" and l3>0:
+            l1=l1+f" (Am: {l3} mg/kg)"
+        return l1

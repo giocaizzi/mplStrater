@@ -203,15 +203,15 @@
 <h2><code class="docutils literal notranslate"><span class="pre">Column</span></code> class<a class="headerlink" href="#column-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="mplStrater.strata.Column">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.strata.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">danger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_qual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">am_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.strata.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hatch_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbl1_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbl2_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbl3_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.strata.Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>This objects is the single stratigraphic column.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mplStrater.strata.Column.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>name of the point</p>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><a class="headerlink" href="#mplStrater.strata.Column.ax" title="Permalink to this definition">¶</a></dt>
+<dd><p>axes in which plot column</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>str</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -228,6 +228,17 @@
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="mplStrater.strata.Column.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#mplStrater.strata.Column.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>id of the point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="mplStrater.strata.Column.coord">
 <span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#mplStrater.strata.Column.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>coords (x,y)</p>
@@ -239,9 +250,20 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.prof">
-<span class="sig-name descname"><span class="pre">prof</span></span><a class="headerlink" href="#mplStrater.strata.Column.prof" title="Permalink to this definition">¶</a></dt>
-<dd><p>height (depth) of stratigraphic column, for scaling purposes</p>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#mplStrater.strata.Column.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>scale of column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mplStrater.strata.Column.max_scale">
+<span class="sig-name descname"><span class="pre">max_scale</span></span><a class="headerlink" href="#mplStrater.strata.Column.max_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>scale of most deep column (for scaling)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float</p>
@@ -252,7 +274,7 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mplStrater.strata.Column.layers">
 <span class="sig-name descname"><span class="pre">layers</span></span><a class="headerlink" href="#mplStrater.strata.Column.layers" title="Permalink to this definition">¶</a></dt>
-<dd><p>ordered list of layers, encoded</p>
+<dd><p>list of layers interfaces</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>list</p>
@@ -261,9 +283,9 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.danger">
-<span class="sig-name descname"><span class="pre">danger</span></span><a class="headerlink" href="#mplStrater.strata.Column.danger" title="Permalink to this definition">¶</a></dt>
-<dd><p>ordered list of danger, encoded</p>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.fill_list">
+<span class="sig-name descname"><span class="pre">fill_list</span></span><a class="headerlink" href="#mplStrater.strata.Column.fill_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordered list of layers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>list</p>
@@ -272,8 +294,19 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.dest">
-<span class="sig-name descname"><span class="pre">dest</span></span><a class="headerlink" href="#mplStrater.strata.Column.dest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.hatch_list">
+<span class="sig-name descname"><span class="pre">hatch_list</span></span><a class="headerlink" href="#mplStrater.strata.Column.hatch_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordered list of hatches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mplStrater.strata.Column.lbl1">
+<span class="sig-name descname"><span class="pre">lbl1</span></span><a class="headerlink" href="#mplStrater.strata.Column.lbl1" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 1</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -283,8 +316,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.am_qual">
-<span class="sig-name descname"><span class="pre">am_qual</span></span><a class="headerlink" href="#mplStrater.strata.Column.am_qual" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.lbl2">
+<span class="sig-name descname"><span class="pre">lbl2</span></span><a class="headerlink" href="#mplStrater.strata.Column.lbl2" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 2</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -294,23 +327,12 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.am_quant">
-<span class="sig-name descname"><span class="pre">am_quant</span></span><a class="headerlink" href="#mplStrater.strata.Column.am_quant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mplStrater.strata.Column.lbl3">
+<span class="sig-name descname"><span class="pre">lbl3</span></span><a class="headerlink" href="#mplStrater.strata.Column.lbl3" title="Permalink to this definition">¶</a></dt>
 <dd><p>label 3</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mplStrater.strata.Column.max_scale">
-<span class="sig-name descname"><span class="pre">max_scale</span></span><a class="headerlink" href="#mplStrater.strata.Column.max_scale" title="Permalink to this definition">¶</a></dt>
-<dd><p>max height of column of dataframe, for scaling purposes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>

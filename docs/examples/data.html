@@ -437,7 +437,7 @@ div.rendered_html tbody tr:hover {
 <p>The <code class="docutils literal notranslate"><span class="pre">mpl.data.StrataFrame</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> with additional features functional to plotting stratigraphic columns.</p>
 <p>First, import all required packages and load the example dataset.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -458,7 +458,7 @@ The autoreload extension is already loaded. To reload it, use:
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -468,7 +468,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -492,18 +492,14 @@ The autoreload extension is already loaded. To reload it, use:
       <th></th>
       <th>x</th>
       <th>y</th>
-      <th>z</th>
-      <th>punto</th>
-      <th>campione</th>
-      <th>da</th>
-      <th>a</th>
-      <th>area</th>
-      <th>matrice</th>
-      <th>pericolosita</th>
-      <th>sostanza_pericolosità</th>
-      <th>smaltibilità_riutilizzo</th>
-      <th>amianto_qualitativa</th>
-      <th>amianto_quantitativa</th>
+      <th>ID</th>
+      <th>from</th>
+      <th>to</th>
+      <th>fill</th>
+      <th>hatch</th>
+      <th>lbl1</th>
+      <th>lbl2</th>
+      <th>lbl3</th>
     </tr>
   </thead>
   <tbody>
@@ -511,15 +507,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>0</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>1</td>
       <td>0.0</td>
       <td>0.6</td>
-      <td>2A</td>
       <td>Riporto conforme</td>
       <td>_</td>
-      <td>NaN</td>
       <td>_</td>
       <td>_</td>
       <td>-1</td>
@@ -528,14 +520,10 @@ The autoreload extension is already loaded. To reload it, use:
       <th>1</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>0.6</td>
       <td>2.0</td>
-      <td>2A</td>
       <td>Assenza campione</td>
-      <td>_</td>
       <td>_</td>
       <td>_</td>
       <td>_</td>
@@ -545,15 +533,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>2</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>2.0</td>
       <td>3.5</td>
-      <td>2A</td>
       <td>Rifiuto</td>
       <td>Pericoloso</td>
-      <td>PIOMBO</td>
       <td>IA</td>
       <td>non rilevato</td>
       <td>-1</td>
@@ -562,14 +546,10 @@ The autoreload extension is already loaded. To reload it, use:
       <th>3</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>3</td>
       <td>3.5</td>
       <td>5.2</td>
-      <td>2A</td>
       <td>Assenza campione</td>
-      <td>_</td>
       <td>_</td>
       <td>_</td>
       <td>_</td>
@@ -579,15 +559,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>4</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>3</td>
       <td>5.2</td>
       <td>6.2</td>
-      <td>2A</td>
       <td>Rifiuto</td>
       <td>Pericoloso</td>
-      <td>PIOMBO</td>
       <td>NP</td>
       <td>non rilevato</td>
       <td>-1</td>
@@ -600,7 +576,7 @@ The autoreload extension is already loaded. To reload it, use:
 <p>Specify the epsg code of the dataframe coordinate reference system (crs).</p>
 <p>In case you need to handle gaps, encode them with a code, such as <code class="docutils literal notranslate"><span class="pre">_</span></code> and specify the encoding in a legend.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -610,7 +586,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 <p>The object has <code class="docutils literal notranslate"><span class="pre">df</span></code> attribute to access the original dataframe loaded.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -619,7 +595,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -643,18 +619,14 @@ The autoreload extension is already loaded. To reload it, use:
       <th></th>
       <th>x</th>
       <th>y</th>
-      <th>z</th>
-      <th>punto</th>
-      <th>campione</th>
-      <th>da</th>
-      <th>a</th>
-      <th>area</th>
-      <th>matrice</th>
-      <th>pericolosita</th>
-      <th>sostanza_pericolosità</th>
-      <th>smaltibilità_riutilizzo</th>
-      <th>amianto_qualitativa</th>
-      <th>amianto_quantitativa</th>
+      <th>ID</th>
+      <th>from</th>
+      <th>to</th>
+      <th>fill</th>
+      <th>hatch</th>
+      <th>lbl1</th>
+      <th>lbl2</th>
+      <th>lbl3</th>
     </tr>
   </thead>
   <tbody>
@@ -662,15 +634,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>0</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>1</td>
       <td>0.0</td>
       <td>0.6</td>
-      <td>2A</td>
       <td>Riporto conforme</td>
       <td>_</td>
-      <td>NaN</td>
       <td>_</td>
       <td>_</td>
       <td>-1</td>
@@ -679,14 +647,10 @@ The autoreload extension is already loaded. To reload it, use:
       <th>1</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>0.6</td>
       <td>2.0</td>
-      <td>2A</td>
       <td>Assenza campione</td>
-      <td>_</td>
       <td>_</td>
       <td>_</td>
       <td>_</td>
@@ -696,15 +660,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>2</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>2.0</td>
       <td>3.5</td>
-      <td>2A</td>
       <td>Rifiuto</td>
       <td>Pericoloso</td>
-      <td>PIOMBO</td>
       <td>IA</td>
       <td>non rilevato</td>
       <td>-1</td>
@@ -713,14 +673,10 @@ The autoreload extension is already loaded. To reload it, use:
       <th>3</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>3</td>
       <td>3.5</td>
       <td>5.2</td>
-      <td>2A</td>
       <td>Assenza campione</td>
-      <td>_</td>
       <td>_</td>
       <td>_</td>
       <td>_</td>
@@ -730,15 +686,11 @@ The autoreload extension is already loaded. To reload it, use:
       <th>4</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>3</td>
       <td>5.2</td>
       <td>6.2</td>
-      <td>2A</td>
       <td>Rifiuto</td>
       <td>Pericoloso</td>
-      <td>PIOMBO</td>
       <td>NP</td>
       <td>non rilevato</td>
       <td>-1</td>
@@ -749,7 +701,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 <p>Similarly, the <code class="docutils literal notranslate"><span class="pre">mpl.Strater</span></code> GeoDataFrame can be accessed with the <code class="docutils literal notranslate"><span class="pre">strataframe</span></code> attribute.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -758,7 +710,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -780,16 +732,16 @@ The autoreload extension is already loaded. To reload it, use:
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>punto</th>
+      <th>ID</th>
       <th>x</th>
       <th>y</th>
-      <th>lista_matrici</th>
+      <th>fill_list</th>
       <th>layers</th>
-      <th>lista_pericolo</th>
-      <th>destino</th>
-      <th>amianto_qual</th>
-      <th>amianto_quant</th>
-      <th>scala</th>
+      <th>hatch_list</th>
+      <th>lbl1_list</th>
+      <th>lbl2_list</th>
+      <th>lbl3_list</th>
+      <th>scale</th>
       <th>geometry</th>
     </tr>
   </thead>
@@ -870,7 +822,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 <p>The strataframe is a <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> and so inherits all methods, such as plotting.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -879,7 +831,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">

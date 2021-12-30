@@ -490,18 +490,14 @@ div.rendered_html tbody tr:hover {
       <th></th>
       <th>x</th>
       <th>y</th>
-      <th>z</th>
-      <th>punto</th>
-      <th>campione</th>
-      <th>da</th>
-      <th>a</th>
-      <th>area</th>
-      <th>matrice</th>
-      <th>pericolosita</th>
-      <th>sostanza_pericolosità</th>
-      <th>smaltibilità_riutilizzo</th>
-      <th>amianto_qualitativa</th>
-      <th>amianto_quantitativa</th>
+      <th>ID</th>
+      <th>from</th>
+      <th>to</th>
+      <th>fill</th>
+      <th>hatch</th>
+      <th>lbl1</th>
+      <th>lbl2</th>
+      <th>lbl3</th>
     </tr>
   </thead>
   <tbody>
@@ -509,15 +505,11 @@ div.rendered_html tbody tr:hover {
       <th>0</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>1</td>
       <td>0.0</td>
       <td>0.6</td>
-      <td>2A</td>
       <td>Riporto conforme</td>
       <td>_</td>
-      <td>NaN</td>
       <td>_</td>
       <td>_</td>
       <td>-1</td>
@@ -526,14 +518,10 @@ div.rendered_html tbody tr:hover {
       <th>1</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>0.6</td>
       <td>2.0</td>
-      <td>2A</td>
       <td>Assenza campione</td>
-      <td>_</td>
       <td>_</td>
       <td>_</td>
       <td>_</td>
@@ -543,15 +531,11 @@ div.rendered_html tbody tr:hover {
       <th>2</th>
       <td>204026.93</td>
       <td>4973197.522</td>
-      <td>258.399</td>
       <td>SI01</td>
-      <td>2</td>
       <td>2.0</td>
       <td>3.5</td>
-      <td>2A</td>
       <td>Rifiuto</td>
       <td>Pericoloso</td>
-      <td>PIOMBO</td>
       <td>IA</td>
       <td>non rilevato</td>
       <td>-1</td>
@@ -610,16 +594,16 @@ div.rendered_html tbody tr:hover {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>punto</th>
+      <th>ID</th>
       <th>x</th>
       <th>y</th>
-      <th>lista_matrici</th>
+      <th>fill_list</th>
       <th>layers</th>
-      <th>lista_pericolo</th>
-      <th>destino</th>
-      <th>amianto_qual</th>
-      <th>amianto_quant</th>
-      <th>scala</th>
+      <th>hatch_list</th>
+      <th>lbl1_list</th>
+      <th>lbl2_list</th>
+      <th>lbl3_list</th>
+      <th>scale</th>
       <th>geometry</th>
     </tr>
   </thead>
@@ -681,22 +665,25 @@ div.rendered_html tbody tr:hover {
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
     <span class="c1">#instantiate class</span>
-    <span class="n">c</span><span class="o">=</span><span class="n">Column</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">l</span><span class="p">,</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;punto&quot;</span><span class="p">],</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">Column</span><span class="p">(</span>
+        <span class="c1">#figure</span>
+        <span class="n">ax</span><span class="p">,</span><span class="n">l</span><span class="p">,</span>
+        <span class="c1">#id</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;ID&quot;</span><span class="p">],</span>
+        <span class="c1">#coords</span>
         <span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.9</span><span class="p">),</span>
+        <span class="c1">#scale</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;scale&quot;</span><span class="p">],</span>
+        <span class="mi">3</span><span class="p">,</span>
+        <span class="c1">#stratigraphic data</span>
         <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;layers&quot;</span><span class="p">],</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lista_matrici&quot;</span><span class="p">],</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lista_pericolo&quot;</span><span class="p">],</span>
-        <span class="c1">#label 1</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;destino&quot;</span><span class="p">],</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;scala&quot;</span><span class="p">],</span>
-        <span class="c1"># label 2</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;amianto_qual&quot;</span><span class="p">],</span>
-        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;amianto_quant&quot;</span><span class="p">],</span>
-        <span class="c1">#profondità</span>
-        <span class="mi">3</span>
-    <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;fill_list&quot;</span><span class="p">],</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;hatch_list&quot;</span><span class="p">],</span>
+        <span class="c1">#labels</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lbl1_list&quot;</span><span class="p">],</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lbl2_list&quot;</span><span class="p">],</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">strataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lbl3_list&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
     <span class="n">c</span><span class="o">.</span><span class="n">fill_column</span><span class="p">()</span>
     <span class="n">c</span><span class="o">.</span><span class="n">set_inset_params</span><span class="p">()</span>
     <span class="n">c</span><span class="o">.</span><span class="n">label_column</span><span class="p">(</span><span class="n">hardcoding</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
