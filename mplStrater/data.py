@@ -62,7 +62,7 @@ class StrataFrame:
     @staticmethod
     def group_layers(df):
         """
-        group layer data in required format.
+        group layers in required format.
 
         Arguments:
             df (:obj:`pandas.DataFrame`): dataframe of stratigraphic data.
