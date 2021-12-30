@@ -442,7 +442,7 @@ div.rendered_html tbody tr:hover {
 <h1>Plot a stratigraphic map<a class="headerlink" href="#Plot-a-stratigraphic-map" title="Permalink to this headline">¶</a></h1>
 <p>import all required packages</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -467,7 +467,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 <p>At the moment, the example requires a temporary hardcode from the original script that inspired the package.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -479,7 +479,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -505,7 +505,7 @@ The autoreload extension is already loaded. To reload it, use:
 <h2>Load data<a class="headerlink" href="#Load-data" title="Permalink to this headline">¶</a></h2>
 <p>Load the example data and initiate a <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> by proving the example df and specify its <code class="docutils literal notranslate"><span class="pre">epsg</span></code> code.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -515,7 +515,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -620,7 +620,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -632,7 +632,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -748,7 +748,7 @@ The autoreload extension is already loaded. To reload it, use:
 <p>Create a stratigraphic map, providing the <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> object previously loaded.</p>
 <p>Addittionally it is possible to specify further parameters, such as * the path <code class="docutils literal notranslate"><span class="pre">basemap_path</span></code> to the basemap * <code class="docutils literal notranslate"><span class="pre">fig_kwd</span></code> : keywords to set figure proprieties * <code class="docutils literal notranslate"><span class="pre">label_hardcode</span></code> : load hardcoding dictionary</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -766,7 +766,7 @@ The autoreload extension is already loaded. To reload it, use:
 <h2>Define a <code class="docutils literal notranslate"><span class="pre">Legend</span></code><a class="headerlink" href="#Define-a-Legend" title="Permalink to this headline">¶</a></h2>
 <p>Define legend.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -787,7 +787,7 @@ The autoreload extension is already loaded. To reload it, use:
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -803,14 +803,21 @@ The autoreload extension is already loaded. To reload it, use:
 <h2>Plot and Export<a class="headerlink" href="#Plot-and-Export" title="Permalink to this headline">¶</a></h2>
 <p>By calling <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method it is possible to plot the stratigraphic columns specified in the database.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method allows to save the plot.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="nb">map</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
 <span class="c1"># map.savefig(&quot;../data/temp.pdf&quot;)</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_stratigraphic_map_13_0.png" src="../_images/examples_stratigraphic_map_13_0.png" />
 </div>
 </div>
 </div>
