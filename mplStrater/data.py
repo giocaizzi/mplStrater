@@ -48,7 +48,7 @@ class StrataFrame:
 
         #scale and max depth 
         merged["scale"]=merged.layers.apply(max)
-        self.depth=merged.scale.max()
+        self.max_depth=merged.scale.max()
         #store output
         self.strataframe=merged
 

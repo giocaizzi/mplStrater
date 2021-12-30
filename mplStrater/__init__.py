@@ -171,10 +171,10 @@ class StratigraphicMap:
                 #id
                 self.df.loc[i,"ID"],
                 #coords
-                (0.9,0.9),
+                (self.df.loc[i,"x"],self.df.loc[i,"y"]),
                 #scale
                 self.df.loc[i,"scale"],
-                3,
+                self.strataframe.max_depth,
                 #stratigraphic data
                 self.df.loc[i,"layers"],
                 self.df.loc[i,"fill_list"],

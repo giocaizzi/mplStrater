@@ -80,9 +80,9 @@ class Column:
     This objects is the single stratigraphic column.
 
     Attributes:
-        id (str): id of the point
         ax (:obj:`matplotlib.axes`): axes in which plot column
         legend(:obj:`mplStrater.strata.Legend`): legend object
+        id (str): id of the point
         coord (:obj:`tuple`): coords (x,y)
         scale (float): scale of column
         max_scale (float): scale of most deep column (for scaling)
