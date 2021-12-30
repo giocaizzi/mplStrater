@@ -2,6 +2,7 @@ import unittest
 from matplotlib.colors import ListedColormap
 from mplStrater.strata import Symbology,Legend,Column
 import pytest
+import pandas as pd
 
 @pytest.mark.usefixtures("test_symbology")
 class TestSymbology(unittest.TestCase):
@@ -35,23 +36,13 @@ class TestLegend(unittest.TestCase):
         self.assertIsInstance(l.matrix,Symbology)
         self.assertIsInstance(l.hatches,Symbology)
 
-# @pytest.mark.usefixtures("test_data")
-# class TestColumn(unittest.TestCase):
 
-#     def setUp(self):
-#         self.l=Legend()
-#         self.c=Column(
-#             name="P01",
-#             legend=self.l,
-#             coord=(5,5),
-#             prof=5,
-#             layers=[],
+@pytest.mark.usefixtures("test_column")
+class TestColumn(unittest.TestCase):
 
-#         )
-#         return 
-
-#     def test(self):
-#         pass
+    @pytest.mark.wip
+    def test_fixture(self):
+        assert isinstance(self.first_column,pd.Series)
 
 if __name__=="__main__":
     unittest.main()

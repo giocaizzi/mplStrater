@@ -119,7 +119,8 @@ class Column:
                     bbox_to_anchor=coord,    # data coordinates
                     loc=loc)  # loc=lower left corner
         #DATAFRAME
-        self.df=pd.DataFrame({'profondita': prof,#list
+        self.df=pd.DataFrame({
+            'profondita': prof,#list
             'matrice': layers,
             "pericolo":danger,
             "destino":dest,

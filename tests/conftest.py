@@ -17,7 +17,7 @@ def test_data(request):
     request.cls.test_data=read_csv(FIN)
     request.cls.epsg=CRS
 
-##### STRATA ############################
+##### SYMBOLOGY ############################
 
 COLORS=["green","white","blue"]
 HATCHES=["","xxxxxxxxx",""]
@@ -26,3 +26,8 @@ HATCHES=["","xxxxxxxxx",""]
 def test_symbology(request):
     request.cls.colors=COLORS
     request.cls.hatches=HATCHES
+
+##### COLUMN ############################
+@pytest.fixture(scope="class")
+def test_column(request):
+    request.cls.first_column=read_csv(FIN).iloc[0]
