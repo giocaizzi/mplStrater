@@ -23,9 +23,9 @@ class TestStrataFrame(unittest.TestCase):
 
     def test_group_layers(self):
         profondita=StrataFrame.group_layers(self.test_data).reset_index()
-        profondita.set_index("punto",inplace=True)
+        profondita.set_index("ID",inplace=True)
         profondita_l=profondita.at["SI01","layers"].tolist()
-        original_len=len(self.test_data[self.test_data["punto"]=="SI01"])
+        original_len=len(self.test_data[self.test_data["ID"]=="SI01"])
         #check that has one more value than the original
         assert len(profondita_l)== original_len+1
         #check that is sorted
@@ -34,10 +34,10 @@ class TestStrataFrame(unittest.TestCase):
         assert  len(profondita_l) == len(set(profondita_l))
 
     def test_group_data(self):
-        data=StrataFrame.group_data(self.test_data,"matrice","lista_matrici").reset_index()
-        data.set_index("punto",inplace=True)
-        data_list=data.at["SI01","lista_matrici"]
-        original_len=len(self.test_data[self.test_data["punto"]=="SI01"])
+        data=StrataFrame.group_data(self.test_data,"fill","fill_list").reset_index()
+        data.set_index("ID",inplace=True)
+        data_list=data.at["SI01","fill_list"]
+        original_len=len(self.test_data[self.test_data["ID"]=="SI01"])
         #check that has one more value than the original
         self.assertEqual(len(data_list),original_len+1)
 
@@ -54,8 +54,8 @@ class TestStrataFrame(unittest.TestCase):
         #test is df
         self.assertIsInstance(sf.strataframe,pd.DataFrame)
         #test points are the sameself.
-        punti_in=self.test_data.punto.unique().tolist()
-        punti_out=sf.strataframe.punto.unique().tolist()
+        punti_in=self.test_data.ID.unique().tolist()
+        punti_out=sf.strataframe.ID.unique().tolist()
         self.assertEqual(len(punti_in),len(punti_out))
         
     @patch.object(StrataFrame,"__init__",partial_init)
