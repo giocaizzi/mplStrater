@@ -11,26 +11,32 @@ matplotlib.rcParams['hatch.linewidth'] = 0.4
 class Symbology:
     """
     This is the symbology definition object for layers of the `mplStrater.strata.Column` object
-
-    Can have either a fill color and/or a hatch.
     
     Arguments:
-        d (dict): dict
-        colors (list): list
-        hatches (list): list
+        d (dict): dict, containing a pair (key,progressive_unique_index). Must start from 1. ::
+
+            example_dict={
+                "soil":1,
+                "sand":2,
+                "clay":3
+            }
+
+        fill (list): list of fill values
+        hatches (list): list of hatch values
     
     Attributes:
-        d (dict): number coded dictionary of string values.
-        colors (list): list of colors
+        d (dict): encoded dictionary of string values.
+        fill (list): list of fill values
         cmap (:obj:`matplotlib.colors.ListedColormap`): cmap
+        hatches (list): list of hatch values
 
     """
-    def __init__(self,d=None,colors=None,hatches=None):
+    def __init__(self,d=None,fill=None,hatches=None):
         self.d=d
-        if colors is not None and hatches is None:
-            self.colors=colors
-            self.cmap = ListedColormap(self.colors)
-        elif hatches is not None and colors is None:
+        if fill is not None and hatches is None:
+            self.fill=fill
+            self.cmap = ListedColormap(self.fill)
+        elif hatches is not None and fill is None:
             self.hatches=hatches
         else:
             raise ValueError("This symbology profile is not implemented.")
@@ -38,34 +44,40 @@ class Symbology:
 class Legend:
     """
     This sets the color-hatches profiles of the `mplStrater.strata.Column` object.
+    Must be feed with `fill_dict` and `hatch_dict` dictionary, consisting of *(key,value)* pair.
+    Defines two separate `mplStrater.strata.Symbology` objects accessible from the `fill` or `hatch` attribute.
+
+    Used for plotting `mplStrater.strata.Columns` both independently and in the `mplStrater.StratigraphicMap` context.
+
+    `Hatch` and `fill` values must be string-encoded matplotlib colors and hatches.
+
+    Arguments:
+        fill_dict (dict): dictionary of fill *(key,value)* pair.
+        hatch_dict (dict): dictionary of hatch *(key,value)* pair.
     """
 
     def __init__(self,fill_dict,hatch_dict):
-        self._set_fill(fill_dict)
-        self._set_hatches(hatch_dict)
+        self.set_fill(fill_dict)
+        self.set_hatches(hatch_dict)
         pass
 
-    def _set_fill(self,dict):
+    def set_fill(self,dict):
         """
         Set layer fill symbology.
         """
-        # d={'Terreno conforme': 1, 'Riporto conforme': 2, 'Riporto non conforme': 3, 'Rifiuto': 4, 'Assenza campione':5}
-        # colors = ['lightgreen', 'darkgreen', 'orange', 'red',"white"]
         d,values=self._unpack_dict(dict)
-        self.fill=Symbology(d,colors=values)
+        self.fill=Symbology(d,fill=values)
 
-    def _set_hatches(self,dict):
+    def set_hatches(self,dict):
         """
         Set layer hatch symbology.
         """
-        # d={"Non pericoloso":1, "Pericoloso":2, "_":3}
-        # hatches=["","xxxxxxxxx",""]
         d,values=self._unpack_dict(dict)
         self.hatches=Symbology(d,hatches=values)
     
     def _unpack_dict(self,d):
         """
-        sets dictionary format for plotting methods.
+        sets dictionary passed to `mpl.Strater` in a format required by the plotting methods.
         """
         values=list(d.values())
         return dict(zip(d.keys(),range(1,len(d)+1))),values
@@ -165,7 +177,7 @@ class Column:
             self.df['fill'][:-1].map(self.legend.fill.d).to_numpy().reshape(-1, 1),
             cmap=self.legend.fill.cmap,
             vmin=1,
-            vmax=len(self.legend.fill.colors),linewidth=0.01,edgecolor="k"
+            vmax=len(self.legend.fill.fill),linewidth=0.01,edgecolor="k"
         )
 
         #hatches

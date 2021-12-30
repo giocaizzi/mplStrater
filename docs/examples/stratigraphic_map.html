@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Code Reference" href="../reference/index.html" />
-    <link rel="prev" title="Strata: stratigraphic data" href="strata.html" /> 
+    <link rel="prev" title="Strata objects: Legend and Column" href="strata.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,8 +91,8 @@
             
               <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="data.html">StrataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strata.html">Strata: stratigraphic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">The StrataFrame object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strata.html">Strata objects: Legend and Column</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Plot a stratigraphic map</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Load-data">Load data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Initiate-a-StratigraphicMap">Initiate a <code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code></a></li>
@@ -441,8 +441,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Plot-a-stratigraphic-map">
 <h1>Plot a stratigraphic map<a class="headerlink" href="#Plot-a-stratigraphic-map" title="Permalink to this headline">¶</a></h1>
 <p>import all required packages</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -456,9 +456,18 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div></div>
+</div>
 <p>At the moment, the example requires a temporary hardcode from the original script that inspired the package.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -470,7 +479,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -494,9 +503,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Load-data">
 <h2>Load data<a class="headerlink" href="#Load-data" title="Permalink to this headline">¶</a></h2>
-<p>Load the example data and specify its <code class="docutils literal notranslate"><span class="pre">epsg</span></code> code.</p>
+<p>Load the example data and initiate a <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> by proving the example df and specify its <code class="docutils literal notranslate"><span class="pre">epsg</span></code> code.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -506,7 +515,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -611,7 +620,7 @@ div.rendered_html tbody tr:hover {
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -623,7 +632,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -739,7 +748,7 @@ div.rendered_html tbody tr:hover {
 <p>Create a stratigraphic map, providing the <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> object previously loaded.</p>
 <p>Addittionally it is possible to specify further parameters, such as * the path <code class="docutils literal notranslate"><span class="pre">basemap_path</span></code> to the basemap * <code class="docutils literal notranslate"><span class="pre">fig_kwd</span></code> : keywords to set figure proprieties * <code class="docutils literal notranslate"><span class="pre">label_hardcode</span></code> : load hardcoding dictionary</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -757,11 +766,35 @@ div.rendered_html tbody tr:hover {
 <h2>Define a <code class="docutils literal notranslate"><span class="pre">Legend</span></code><a class="headerlink" href="#Define-a-Legend" title="Permalink to this headline">¶</a></h2>
 <p>Define legend.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">legend</span><span class="o">=</span><span class="n">Legend</span><span class="p">()</span>
+<span></span><span class="n">fill_dict</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;Terreno conforme&#39;</span><span class="p">:</span> <span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Riporto conforme&#39;</span><span class="p">:</span> <span class="s1">&#39;darkgreen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Riporto non conforme&#39;</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Rifiuto&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Assenza campione&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span>
+    <span class="p">}</span>
+
+<span class="n">hatch_dict</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;Non pericoloso&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pericoloso&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxxx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">legend</span><span class="o">=</span><span class="n">Legend</span><span class="p">(</span>
+    <span class="n">fill_dict</span><span class="o">=</span><span class="n">fill_dict</span><span class="p">,</span>
+    <span class="n">hatch_dict</span><span class="o">=</span><span class="n">hatch_dict</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -770,21 +803,14 @@ div.rendered_html tbody tr:hover {
 <h2>Plot and Export<a class="headerlink" href="#Plot-and-Export" title="Permalink to this headline">¶</a></h2>
 <p>By calling <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method it is possible to plot the stratigraphic columns specified in the database.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method allows to save the plot.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="nb">map</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
 <span class="c1"># map.savefig(&quot;../data/temp.pdf&quot;)</span>
 </pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/examples_stratigraphic_map_12_0.png" src="../_images/examples_stratigraphic_map_12_0.png" />
 </div>
 </div>
 </div>
@@ -801,7 +827,7 @@ div.rendered_html tbody tr:hover {
         <a href="../reference/index.html" class="btn btn-neutral float-right" title="Code Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="strata.html" class="btn btn-neutral float-left" title="Strata: stratigraphic data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="strata.html" class="btn btn-neutral float-left" title="Strata objects: Legend and Column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

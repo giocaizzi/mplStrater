@@ -17,15 +17,31 @@ def test_data(request):
     request.cls.test_data=read_csv(FIN)
     request.cls.epsg=CRS
 
-##### SYMBOLOGY ############################
+##### SYMBOLOGY and LEGEND ############################
 
-COLORS=["green","white","blue"]
-HATCHES=["","xxxxxxxxx",""]
+FILL_DICT={
+    'Terreno conforme': 'lightgreen',
+    'Riporto conforme': 'darkgreen',
+    'Riporto non conforme': 'orange',
+    'Rifiuto': 'red',
+    'Assenza campione': 'white'
+    }
+
+HATCH_DICT={
+    'Non pericoloso': '',
+    'Pericoloso': 'xxxxxxxxx',
+    '_': ''
+    }
 
 @pytest.fixture(scope="class")
 def test_symbology(request):
-    request.cls.colors=COLORS
-    request.cls.hatches=HATCHES
+    request.cls.fill_list=list(FILL_DICT.values())
+    request.cls.hatch_list=list(HATCH_DICT.values())
+
+@pytest.fixture(scope="class")
+def test_legend(request):
+    request.cls.fill_dict=FILL_DICT
+    request.cls.hatch_dict=HATCH_DICT
 
 ##### COLUMN ############################
 @pytest.fixture(scope="class")
