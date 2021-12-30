@@ -7,7 +7,7 @@
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main)
 ![Codecov](https://img.shields.io/codecov/c/github/giocaizzi/mplStrater)
 [![Requirements Status](https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main)](https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main)
-![Licende](https://img.shields.io/github/license/giocaizzi/mplStrater)
+![License](https://img.shields.io/github/license/giocaizzi/mplStrater)
 ![GitHub issues](https://img.shields.io/github/issues/giocaizzi/mplStrater)
 
 This package provides the possibility to plot geologic stratigraphic columns with a structured symbology and labelling system on `matplotlib` figures.
