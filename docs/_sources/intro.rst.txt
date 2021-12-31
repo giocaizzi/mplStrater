@@ -1,8 +1,8 @@
-This package allows to plot stratigraphic columns with python.
-
 .. image:: https://img.shields.io/pypi/pyversions/mplStrater   :alt: PyPI - Python Version 
 
-.. image:: https://img.shields.io/pypi/v/mplStrater?color=blue :alt: PyPI - Version
+.. image:: https://img.shields.io/pypi/v/mplStrater?makecolor=blue :alt: PyPI - Version
+
+
 
 .. image:: https://img.shields.io/github/release-date/giocaizzi/mplStrater :alt: GitHub Release Date
 
@@ -16,6 +16,10 @@ This package allows to plot stratigraphic columns with python.
 
 .. image:: https://img.shields.io/github/license/giocaizzi/mplStrater :alt: license
 .. image:: https://img.shields.io/github/issues/giocaizzi/mplStrater :alt: issues
+
+
+
+This package allows to plot stratigraphic columns with python.
 
 Passing to :code:`mplStrater`:
 
