@@ -1,25 +1,30 @@
 mplStrater: plot stratigraphic columns with python
 ==================================================
 
-.. image:: https://img.shields.io/pypi/pyversions/mplStrater   :alt: PyPI - Python Version 
+.. image:: https://img.shields.io/pypi/pyversions/mplStrater
+    :alt: PyPI - Python Version 
 
-.. image:: https://img.shields.io/pypi/v/mplStrater?makecolor=blue :alt: PyPI - Version
+.. image:: https://img.shields.io/pypi/v/mplStrater?color=blue   
+    :alt: PyPI
 
+.. image:: https://img.shields.io/github/release-date/giocaizzi/mplStrater 
+    :alt: GitHub Release Date
 
+.. image:: https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main 
+    :alt: GitHub Workflow Status (branch)
 
-.. image:: https://img.shields.io/github/release-date/giocaizzi/mplStrater :alt: GitHub Release Date
-
-.. image:: https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main :alt: GitHub Workflow Status (branch)
-
-.. image:: https://img.shields.io/codecov/c/github/giocaizzi/mplStrater :alt: Codecov
+.. image:: https://img.shields.io/codecov/c/github/giocaizzi/mplStrater 
+    :alt: Codecov
 
 .. image:: https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main 
     :target: https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main
     :alt: Requirements Status
 
-.. image:: https://img.shields.io/github/license/giocaizzi/mplStrater :alt: license
+.. image:: https://img.shields.io/github/license/giocaizzi/mplStrater 
+    :alt: license
 
-.. image:: https://img.shields.io/github/issues/giocaizzi/mplStrater :alt: issues
+.. image:: https://img.shields.io/github/issues/giocaizzi/mplStrater 
+    :alt: issues
 
 
 This package allows to plot stratigraphic columns with python.
