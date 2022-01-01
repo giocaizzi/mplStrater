@@ -1,0 +1,21 @@
+x,y,ID,from,to,fill,hatch,lbl1,lbl2,lbl3
+204026.93,4973197.522,SI01,0.0,0.6,Riporto conforme,_,_,_,-1
+204026.93,4973197.522,SI01,0.6,2.0,Assenza campione,_,_,_,-1
+204026.93,4973197.522,SI01,2.0,3.5,Rifiuto,Pericoloso,IA,non rilevato,-1
+204026.93,4973197.522,SI01,3.5,5.2,Assenza campione,_,_,_,-1
+204026.93,4973197.522,SI01,5.2,6.2,Rifiuto,Pericoloso,NP,non rilevato,-1
+204026.93,4973197.522,SI01,6.2,8.0,Assenza campione,_,_,_,-1
+204026.93,4973197.522,SI01,8.0,9.0,Terreno conforme,_,_,_,-1
+204026.93,4973197.522,SI01,9.0,10.0,Terreno conforme,_,_,_,-1
+204008.591,4973148.94,SI02,0.0,2.0,Riporto non conforme,Non pericoloso,NP,non rilevato,-1
+204008.591,4973148.94,SI02,2.0,3.0,Assenza campione,_,_,_,-1
+204008.591,4973148.94,SI02,3.0,6.0,Rifiuto,Non pericoloso,NP,non rilevato,-1
+204008.591,4973148.94,SI02,6.0,6.6,Assenza campione,_,_,_,-1
+204008.591,4973148.94,SI02,6.6,8.5,Rifiuto,Non pericoloso,NP,non rilevato,-1
+204008.734,4973122.605,SI03,0.0,1.5,Assenza campione,_,_,_,-1
+204008.734,4973122.605,SI03,1.5,3.4,Riporto non conforme,Non pericoloso,NP,non rilevato,-1
+204008.734,4973122.605,SI03,3.4,5.0,Assenza campione,_,_,_,-1
+204008.734,4973122.605,SI03,5.0,6.0,Riporto non conforme,Non pericoloso,NP,non rilevato,-1
+204008.734,4973122.605,SI03,6.0,8.4,Rifiuto,Non pericoloso,NP,non rilevato,-1
+204008.734,4973122.605,SI03,8.4,8.5,Assenza campione,_,_,_,-1
+204008.734,4973122.605,SI03,8.5,9.0,Terreno conforme,_,_,non rilevato,-1

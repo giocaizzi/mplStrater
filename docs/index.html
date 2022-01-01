@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mplStrater: plot stratigraphic columns with python &mdash; mplStrater 0.0.4 documentation</title>
+  <title>mplStrater: plot stratigraphic columns with python &mdash; mplStrater 0.0.5 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="StrataFrame" href="examples/data.html" /> 
+    <link rel="next" title="The StrataFrame object" href="examples/data.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -88,8 +88,8 @@
             
               <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/data.html">StrataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/strata.html">Strata: stratigraphic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/data.html">The StrataFrame object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/strata.html">Strata objects: Legend and Column</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/stratigraphic_map.html">Plot a stratigraphic map</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
@@ -185,6 +185,14 @@
 </style>
 <div class="section" id="mplstrater-plot-stratigraphic-columns-with-python">
 <h1>mplStrater: plot stratigraphic columns with python<a class="headerlink" href="#mplstrater-plot-stratigraphic-columns-with-python" title="Permalink to this headline">¶</a></h1>
+<img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/mplStrater" />
+<img alt="PyPI" src="https://img.shields.io/pypi/v/mplStrater?color=blue" />
+<img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/giocaizzi/mplStrater" />
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main" />
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/giocaizzi/mplStrater" />
+<a class="reference external image-reference" href="https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main"><img alt="Requirements Status" src="https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main" /></a>
+<img alt="license" src="https://img.shields.io/github/license/giocaizzi/mplStrater" />
+<img alt="issues" src="https://img.shields.io/github/issues/giocaizzi/mplStrater" />
 <p>This package allows to plot stratigraphic columns with python.</p>
 <p>Passing to <code class="code docutils literal notranslate"><span class="pre">mplStrater</span></code>:</p>
 <ul class="simple">
@@ -194,12 +202,25 @@
 <p>the package creates a series of <code class="code docutils literal notranslate"><span class="pre">mplStrater.strata.Columns</span></code> objects
 that can be plotted, all together or singularly, on <code class="code docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>. The columns
 are plotted with the color and hatch scheme defined providing the legend object.</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/map.png" src="_images/map.png" />
+<p class="caption"><span class="caption-text">Output map of the example dataset.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The package also allows to plot singularly column contained in the dataset.</p>
+<div class="figure align-default" id="id2">
+<img alt="_images/columns.jpeg" src="_images/columns.jpeg" />
+<p class="caption"><span class="caption-text">It allows to plot the single columns for closer inspection.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>Packaged from a hardcoded script in quarantine in december 2021, by <a class="reference external" href="https://github.com/giocaizzi">&#64;giocaizzi</a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/data.html">StrataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/strata.html">Strata: stratigraphic data</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/data.html">The StrataFrame object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/data.html#Define-a-StrataFrame">Define a <code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/strata.html">Strata objects: Legend and Column</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/strata.html#Define-a-Legend.">Define a <code class="docutils literal notranslate"><span class="pre">Legend</span></code>.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/strata.html#Plot-stand-alone-Column-objects">Plot stand-alone <code class="docutils literal notranslate"><span class="pre">Column</span></code> objects</a></li>
 </ul>
 </li>
@@ -241,7 +262,7 @@ are plotted with the color and hatch scheme defined providing the legend object.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="examples/data.html" class="btn btn-neutral float-right" title="StrataFrame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="examples/data.html" class="btn btn-neutral float-right" title="The StrataFrame object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

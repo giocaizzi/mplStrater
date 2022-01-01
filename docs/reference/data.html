@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>data objects &mdash; mplStrater 0.0.4 documentation</title>
+  <title>data objects &mdash; mplStrater 0.0.5 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -89,8 +89,8 @@
             
               <p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../examples/data.html">StrataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/strata.html">Strata: stratigraphic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/data.html">The StrataFrame object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/strata.html">Strata objects: Legend and Column</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/stratigraphic_map.html">Plot a stratigraphic map</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
@@ -216,6 +216,32 @@ functional to stratigraphic column plotting.</p>
 <dt class="sig sig-object py" id="mplStrater.data.StrataFrame.geodf">
 <span class="sig-name descname"><span class="pre">geodf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame.geodf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the strataframe as GeoDataFrame of the given Coordinate Reference System (crs).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mplStrater.data.StrataFrame.group_data">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">group_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colname1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colname2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame.group_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>group data in required format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) – dataframe of stratigraphic data.</p></li>
+<li><p><strong>colname1</strong> (str, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – column names for <cite>pandas.groupBy</cite></p></li>
+<li><p><strong>colname2</strong> (str, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – column names for <cite>pandas.groupBy</cite></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mplStrater.data.StrataFrame.group_layers">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">group_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame.group_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>group layers in required format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) – dataframe of stratigraphic data.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

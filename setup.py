@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='mplStrater',
-    version="0.0.4",
+    version="0.0.5",
     description="plot geologic stratigraphic columns with python",
     long_description_content_type='text/markdown',
     long_description=long_description,
@@ -32,7 +32,11 @@ setup(
             "nbsphinx",
             "myst-parser",
             "sphinx_rtd_theme",
-            "docutils==0.16"],
+            # "docutils==0.16" 
+            # # otherwise requires.io gives out-of-date, but its
+            # # only for docs building. It is required because of a bug 
+            # # not being solved between rdt-nbsphinx
+            ],
         "dev":[],
         'test':['pytest',"pytest-cov"],
         },

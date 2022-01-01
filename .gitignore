@@ -6,3 +6,5 @@ docsrc/build
 temp
 dist
 build
+.vscode
+.coverage

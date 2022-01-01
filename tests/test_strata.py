@@ -1,58 +1,49 @@
 import unittest
 from matplotlib.colors import ListedColormap
 from mplStrater.strata import Symbology,Legend,Column
+import pytest
+import pandas as pd
 
+@pytest.mark.usefixtures("test_symbology")
 class TestSymbology(unittest.TestCase):
 
-    def test_color(self):
+    def test_fill(self):
         #test symbology structure
-        colors=["green","white","blue"]
-        s=Symbology(d={},colors=colors)
+        s=Symbology(d={},fill=self.fill_list)
         self.assertIsInstance(s.d,dict)
-        self.assertEqual(set(s.colors),set(colors))
+        self.assertEqual(set(s.fill),set(self.fill_list))
         self.assertIsInstance(s.cmap,ListedColormap)
     
     def test_hatches(self):
         #test symbology structure
-        hatches=["","xxxxxxxxx",""]
-        s=Symbology(d={},hatches=hatches)
+        s=Symbology(d={},hatches=self.hatch_list)
         self.assertIsInstance(s.d,dict)
-        self.assertEqual(set(s.hatches),set(hatches))
+        self.assertEqual(set(s.hatches),set(self.hatch_list))
 
     def test_error(self):
         #test error input
         d={}
-        hatches=["","xxxxxxxxx",""]
-        colors=["green","white","blue"]
         self.assertRaises(
             ValueError,
             Symbology,
-            d,colors=colors,hatches=hatches)
+            d,fill=self.fill_list,hatches=self.hatch_list)
 
+@pytest.mark.usefixtures("test_legend")
 class TestLegend(unittest.TestCase):
 
     def test_init(self):
         #matrix and hatches are symbology 
-        l=Legend()
-        self.assertIsInstance(l.matrix,Symbology)
+        l=Legend(fill_dict=self.fill_dict,hatch_dict=self.hatch_dict)
+        self.assertIsInstance(l.fill,Symbology)
         self.assertIsInstance(l.hatches,Symbology)
 
-# class TestColumn(unittest.TestCase):
 
-#     def setUp(self):
-#         self.l=Legend()
-#         self.c=Column(
-#             name="P01",
-#             legend=self.l,
-#             coord=(5,5),
-#             prof=5,
-#             layers=[],
+@pytest.mark.usefixtures("test_column")
+class TestColumn(unittest.TestCase):
 
-#         )
-#         return 
-
-#     def test(self):
-#         pass
+    @pytest.mark.wip
+    def test_fixture(self):
+        assert isinstance(self.first_column,pd.Series)
 
 if __name__=="__main__":
     unittest.main()
