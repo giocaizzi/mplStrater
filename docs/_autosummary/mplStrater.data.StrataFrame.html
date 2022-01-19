@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>data objects &mdash; mplStrater 0.0.5 documentation</title>
+  <title>mplStrater.data.StrataFrame &mdash; mplStrater 0.0.5 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="strata objects" href="strata.html" />
-    <link rel="prev" title="Code Reference" href="index.html" /> 
+    <link rel="next" title="mplStrater.strata" href="mplStrater.strata.html" />
+    <link rel="prev" title="mplStrater.data" href="mplStrater.data.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,18 +95,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#strataframe-class"><code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> class</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mplStrater.html">mplStrater</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.StratigraphicMap.html">mplStrater.StratigraphicMap</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="mplStrater.data.html">mplStrater.data</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mplStrater.data.StrataFrame</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stratigraphic_map.html"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.strata.html">mplStrater.strata</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../_autosummary/mplStrater.html">mplStrater</a></li>
 </ul>
 
             
@@ -152,15 +149,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Code Reference</a> &raquo;</li>
+          <li><a href="mplStrater.html">mplStrater</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</li>
+          <li><a href="mplStrater.data.html">mplStrater.data</a> &raquo;</li>
+        
+      <li>mplStrater.data.StrataFrame</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/data.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_autosummary/mplStrater.data.StrataFrame.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,15 +196,13 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="data-objects">
-<h1><code class="docutils literal notranslate"><span class="pre">data</span></code> objects<a class="headerlink" href="#data-objects" title="Permalink to this headline">¶</a></h1>
-<p>This is the dataframe of the <code class="docutils literal notranslate"><span class="pre">mplStrater.StratigraphicMap</span></code>.</p>
-<div class="section" id="strataframe-class">
-<h2><code class="docutils literal notranslate"><span class="pre">StrataFrame</span></code> class<a class="headerlink" href="#strataframe-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mplstrater-data-strataframe">
+<h1>mplStrater.data.StrataFrame<a class="headerlink" href="#mplstrater-data-strataframe" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="mplStrater.data.StrataFrame">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.data.</span></span><span class="sig-name descname"><span class="pre">StrataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame" title="Permalink to this definition">¶</a></dt>
-<dd><p>StrataFrame is a <cite>pandas.DataFrame</cite> object with some added methods
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>StrataFrame is a <cite>pandas.DataFrame</cite> object with some added methods
 functional to stratigraphic column plotting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -215,6 +212,35 @@ functional to stratigraphic column plotting.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mplStrater.data.StrataFrame.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.data.StrataFrame.__init__" title="mplStrater.data.StrataFrame.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([df, epsg])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mplStrater.data.StrataFrame.geodf" title="mplStrater.data.StrataFrame.geodf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geodf</span></code></a>()</p></td>
+<td><p>Sets the strataframe as GeoDataFrame of the given Coordinate Reference System (crs).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.data.StrataFrame.group_data" title="mplStrater.data.StrataFrame.group_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_data</span></code></a>(df, colname1, colname2)</p></td>
+<td><p>group data in required format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mplStrater.data.StrataFrame.group_layers" title="mplStrater.data.StrataFrame.group_layers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_layers</span></code></a>(df)</p></td>
+<td><p>group layers in required format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.data.StrataFrame.set_df" title="mplStrater.data.StrataFrame.set_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_df</span></code></a>()</p></td>
+<td><p>process the dataframe to get the desired information to plot the data.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.data.StrataFrame.geodf">
 <span class="sig-name descname"><span class="pre">geodf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.data.StrataFrame.geodf" title="Permalink to this definition">¶</a></dt>
@@ -256,7 +282,6 @@ functional to stratigraphic column plotting.</p>
 </dd></dl>
 
 </div>
-</div>
 
 
            </div>
@@ -266,10 +291,10 @@ functional to stratigraphic column plotting.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="strata.html" class="btn btn-neutral float-right" title="strata objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mplStrater.strata.html" class="btn btn-neutral float-right" title="mplStrater.strata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Code Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mplStrater.data.html" class="btn btn-neutral float-left" title="mplStrater.data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -38,7 +38,9 @@ extensions = [
     'sphinx.ext.napoleon',
     'myst_parser',
     'nbsphinx',
+    'sphinx.ext.autosummary',
 ]
+autosummary_generate = True
 source_suffix = ['.rst', '.md']
 # myst_enable_extensions = [
 #     "amsmath",

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Reference &mdash; mplStrater 0.0.5 documentation</title>
+  <title>mplStrater.strata &mdash; mplStrater 0.0.5 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="data objects" href="data.html" />
-    <link rel="prev" title="Plot a stratigraphic map" href="../examples/stratigraphic_map.html" /> 
+    <link rel="next" title="mplStrater.strata.Column" href="mplStrater.strata.Column.html" />
+    <link rel="prev" title="mplStrater.data.StrataFrame" href="mplStrater.data.StrataFrame.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,15 +95,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stratigraphic_map.html"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mplStrater.html">mplStrater</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.StratigraphicMap.html">mplStrater.StratigraphicMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.data.html">mplStrater.data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mplStrater.strata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mplStrater.strata.Column.html">mplStrater.strata.Column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mplStrater.strata.Legend.html">mplStrater.strata.Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mplStrater.strata.Symbology.html">mplStrater.strata.Symbology</a></li>
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../_autosummary/mplStrater.html">mplStrater</a></li>
+</li>
 </ul>
 
             
@@ -149,13 +151,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Code Reference</li>
+          <li><a href="mplStrater.html">mplStrater</a> &raquo;</li>
+        
+      <li>mplStrater.strata</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_autosummary/mplStrater.strata.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,15 +196,26 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="code-reference">
-<h1>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data.html"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratigraphic_map.html"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
-</ul>
-</div>
+<div class="section" id="module-mplStrater.strata">
+<span id="mplstrater-strata"></span><h1>mplStrater.strata<a class="headerlink" href="#module-mplStrater.strata" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="mplStrater.strata.Column.html#mplStrater.strata.Column" title="mplStrater.strata.Column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Column</span></code></a>(ax, legend, id, coord, scale, ...)</p></td>
+<td><p>This objects is the single stratigraphic column.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mplStrater.strata.Legend.html#mplStrater.strata.Legend" title="mplStrater.strata.Legend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Legend</span></code></a>(fill_dict, hatch_dict)</p></td>
+<td><p>This sets the color-hatches profiles of the <cite>mplStrater.strata.Column</cite> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mplStrater.strata.Symbology.html#mplStrater.strata.Symbology" title="mplStrater.strata.Symbology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Symbology</span></code></a>([d, fill, hatches])</p></td>
+<td><p>This is the symbology definition object for layers of the <cite>mplStrater.strata.Column</cite> object</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -211,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="data.html" class="btn btn-neutral float-right" title="data objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mplStrater.strata.Column.html" class="btn btn-neutral float-right" title="mplStrater.strata.Column" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../examples/stratigraphic_map.html" class="btn btn-neutral float-left" title="Plot a stratigraphic map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mplStrater.data.StrataFrame.html" class="btn btn-neutral float-left" title="mplStrater.data.StrataFrame" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

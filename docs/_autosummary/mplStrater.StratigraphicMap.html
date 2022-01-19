@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>StratigraphicMap object &mdash; mplStrater 0.0.5 documentation</title>
+  <title>mplStrater.StratigraphicMap &mdash; mplStrater 0.0.5 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mplStrater" href="../_autosummary/mplStrater.html" />
-    <link rel="prev" title="strata objects" href="strata.html" /> 
+    <link rel="next" title="mplStrater.data" href="mplStrater.data.html" />
+    <link rel="prev" title="mplStrater" href="mplStrater.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,15 +95,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code reference:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="docutils literal notranslate"><span class="pre">data</span></code> objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strata.html"><code class="docutils literal notranslate"><span class="pre">strata</span></code> objects</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mplStrater.html">mplStrater</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mplStrater.StratigraphicMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.data.html">mplStrater.data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mplStrater.strata.html">mplStrater.strata</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../_autosummary/mplStrater.html">mplStrater</a></li>
 </ul>
 
             
@@ -149,15 +146,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Code Reference</a> &raquo;</li>
+          <li><a href="mplStrater.html">mplStrater</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object</li>
+      <li>mplStrater.StratigraphicMap</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/stratigraphic_map.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_autosummary/mplStrater.StratigraphicMap.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,17 +191,17 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="stratigraphicmap-object">
-<h1><code class="docutils literal notranslate"><span class="pre">StratigraphicMap</span></code> object<a class="headerlink" href="#stratigraphicmap-object" title="Permalink to this headline">¶</a></h1>
-<p>This is the core of the package. This is the <cite>matplotlib.Figure</cite>.</p>
+<div class="section" id="mplstrater-stratigraphicmap">
+<h1>mplStrater.StratigraphicMap<a class="headerlink" href="#mplstrater-stratigraphicmap" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mplStrater.</span></span><span class="sig-name descname"><span class="pre">StratigraphicMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basemap_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_kwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_hardcoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class is the core of mplStrater package.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class is the core of mplStrater package.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>strataframe</strong> (<a class="reference internal" href="data.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a>) – a StrataFrame object containing data to be plotted.</p></li>
+<li><p><strong>strataframe</strong> (<a class="reference internal" href="mplStrater.data.StrataFrame.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a>) – a StrataFrame object containing data to be plotted.</p></li>
 <li><p><strong>path_to_data</strong> (<em>str</em>) – path to stratigraphic information stored in csv file</p></li>
 <li><p><strong>basemap_path</strong> (<em>str</em>) – path to georeferenced raster to use as basemap.</p></li>
 </ul>
@@ -216,7 +213,7 @@
 <dd><p>the linked StrataFrame object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="data.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="mplStrater.data.StrataFrame.html#mplStrater.data.StrataFrame" title="mplStrater.data.StrataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplStrater.data.StrataFrame</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -288,6 +285,41 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="mplStrater.StratigraphicMap.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basemap_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_kwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_hardcoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.__init__" title="mplStrater.StratigraphicMap.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(strataframe[, basemap_path, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.normalize_raster" title="mplStrater.StratigraphicMap.normalize_raster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_raster</span></code></a>()</p></td>
+<td><p>Normalize content of georeferenced RGBA raster to to 0.0-1.0 format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.plot" title="mplStrater.StratigraphicMap.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(legend)</p></td>
+<td><p>creates figure and plots the data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.plot_basemap" title="mplStrater.StratigraphicMap.plot_basemap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_basemap</span></code></a>(ax[, color_correction])</p></td>
+<td><p>sets basemap if this has been correctly specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.plot_points" title="mplStrater.StratigraphicMap.plot_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_points</span></code></a>(ax)</p></td>
+<td><p>plot points</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.plot_strata_columns" title="mplStrater.StratigraphicMap.plot_strata_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_strata_columns</span></code></a>(legend, ax)</p></td>
+<td><p>plot all stratigraphic columns in strataframe.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mplStrater.StratigraphicMap.savefig" title="mplStrater.StratigraphicMap.savefig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savefig</span></code></a>(path)</p></td>
+<td><p>save figure</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
 <dt class="sig sig-object py" id="mplStrater.StratigraphicMap.normalize_raster">
 <span class="sig-name descname"><span class="pre">normalize_raster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mplStrater.StratigraphicMap.normalize_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalize content of georeferenced RGBA raster to to 0.0-1.0 format.</p>
@@ -355,10 +387,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../_autosummary/mplStrater.html" class="btn btn-neutral float-right" title="mplStrater" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mplStrater.data.html" class="btn btn-neutral float-right" title="mplStrater.data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="strata.html" class="btn btn-neutral float-left" title="strata objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mplStrater.html" class="btn btn-neutral float-left" title="mplStrater" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -58,11 +58,13 @@ Packaged from a hardcoded script in quarantine in december 2021, by `@giocaizzi 
    examples/strata.ipynb
    examples/stratigraphic_map.ipynb
 
-.. toctree::
-   :maxdepth: 2
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
    :caption: Code reference:
+   :recursive:
 
-   reference/index.rst
+   mplStrater
 
 Indices and tables
 ==================
