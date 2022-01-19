@@ -58,6 +58,9 @@ Packaged from a hardcoded script in quarantine in december 2021, by `@giocaizzi 
    examples/strata.ipynb
    examples/stratigraphic_map.ipynb
 
+Code reference
+==============
+
 .. autosummary::
    :toctree: _autosummary
    :template: custom-module-template.rst

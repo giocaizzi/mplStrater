@@ -1,3 +1,7 @@
+"""
+mplStrater: plot stratigraphic columns with python.
+"""
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import geopandas as gp
@@ -15,7 +19,7 @@ __version__="0.0.5"
 
 class StratigraphicMap:
     """
-    This class is the core of mplStrater package.
+    This is the stratigraphic map.
 
     Arguments:
         strataframe (:obj:`mplStrater.data.StrataFrame`): a StrataFrame object containing data to be plotted.
