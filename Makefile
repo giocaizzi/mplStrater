@@ -3,9 +3,10 @@
 help: ## Show targets
 	@grep -E '^[a-z]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "%-8s %s\n", $$1, $$2}'
 
-lint: ## ruff check + format check
+lint: ## ruff check + format check, mypy
 	uv run ruff check .
 	uv run ruff format --check .
+	uv run mypy
 
 test: ## Run tests with coverage
 	uv run pytest
