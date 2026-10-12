@@ -11,6 +11,6 @@
 ## Gotchas
 
 - Python is pinned to 3.12 (`.python-version`): `rio-color` ships only an sdist whose build pins `numpy==2.0.2`, which has no 3.13 wheels.
-- Versions are owned by release-please (`release-please.yml`, `release-please-config.json`, `.release-please-manifest.json`): it bumps `pyproject.toml` and `__version__` in `mplStrater/__init__.py`; never bump them by hand.
+- Not released: no release automation; the version in `pyproject.toml` and `__version__` stays as is.
 - `docs/` is generated HTML; edit `docsrc/source`, never `docs/`.
 - `main` changes only through squash-merged PRs with a Conventional Commit title; the required check is `check` in `.github/workflows/ci.yml`. See the [GitHub standard](https://github.com/giocaizzi/.github/blob/main/docs/standard.md).
