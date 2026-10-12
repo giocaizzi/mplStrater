@@ -1,0 +1,33 @@
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    env:
+      # Skip cleanly until the RP_APP_ID / RP_APP_KEY secrets are set.
+      HAS_APP: ${{ secrets.RP_APP_ID != '' }}
+    steps:
+      - if: env.HAS_APP != 'true'
+        run: echo "::notice::RP_APP_ID / RP_APP_KEY not set; skipping release-please"
+      # Mint a short-lived token from the release-please GitHub App so the
+      # release PR triggers CI, unlike the default GITHUB_TOKEN.
+      - uses: actions/create-github-app-token@v3
+        if: env.HAS_APP == 'true'
+        id: app-token
+        with:
+          app-id: ${{ secrets.RP_APP_ID }}
+          private-key: ${{ secrets.RP_APP_KEY }}
+      - uses: googleapis/release-please-action@v5
+        if: env.HAS_APP == 'true'
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
