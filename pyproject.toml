@@ -29,7 +29,12 @@ Documentation = "https://giocaizzi.github.io/mplStrater/"
 Source = "https://github.com/giocaizzi/mplStrater"
 
 [dependency-groups]
-dev = ["pytest", "pytest-cov", "ruff"]
+dev = [
+    "mypy>=2.4.0",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
 docs = ["sphinx", "nbsphinx", "myst-parser", "sphinx_rtd_theme"]
 
 [tool.setuptools.packages.find]
@@ -43,3 +48,7 @@ select = ["E4", "E7", "E9", "F"]
 
 [tool.pytest.ini_options]
 addopts = "--cov=mplStrater --cov-report=xml"
+
+[tool.mypy]
+packages = ["mplStrater"]
+ignore_missing_imports = true
