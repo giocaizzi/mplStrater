@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/pypi/v/mplStrater?color=blue)
 
 ![GitHub Release Date](https://img.shields.io/github/release-date/giocaizzi/mplStrater)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/giocaizzi/mplStrater/mplStrater/main)
+![CI](https://github.com/giocaizzi/mplStrater/actions/workflows/ci.yml/badge.svg?branch=main)
 ![Codecov](https://img.shields.io/codecov/c/github/giocaizzi/mplStrater)
 [![Requirements Status](https://requires.io/github/giocaizzi/mplStrater/requirements.svg?branch=main)](https://requires.io/github/giocaizzi/mplStrater/requirements/?branch=main)
 ![License](https://img.shields.io/github/license/giocaizzi/mplStrater)
@@ -27,15 +27,16 @@ The documentation with examples can be found [here](https://giocaizzi.github.io/
 ## Installation with pip
 
 ```
-pip install
+pip install mplStrater
 ```
 
-## Installation (from source)
+## Development
 
-Clone code from github and install with `pip`.
+Requires [uv](https://docs.astral.sh/uv/).
 
 ```
 git clone https://github.com/giocaizzi/mplStrater.git
 cd mplStrater
-pip install .
+uv sync
+make check
 ```

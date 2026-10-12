@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mplStrater"
+version = "0.0.5"
+description = "plot geologic stratigraphic columns with python"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "giocaizzi", email = "giocaizzi@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "geopandas",
+    "matplotlib",
+    "numpy>=1.17",
+    "pandas",
+    "rasterio",
+    "rio_color",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Documentation = "https://giocaizzi.github.io/mplStrater/"
+"Bug Reports" = "https://github.com/giocaizzi/mplStrater/issues"
+Source = "https://github.com/giocaizzi/mplStrater"
+
+[dependency-groups]
+dev = ["pytest", "pytest-cov", "ruff"]
+docs = ["sphinx", "nbsphinx", "myst-parser", "sphinx_rtd_theme"]
+
+[tool.setuptools.packages.find]
+include = ["mplStrater*"]
+
+[tool.ruff]
+extend-exclude = ["docs", "docsrc"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=mplStrater --cov-report=xml"

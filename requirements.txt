@@ -1,6 +1,0 @@
-geopandas
-matplotlib
-numpy>=1.17
-pandas
-rasterio
-rio_color
