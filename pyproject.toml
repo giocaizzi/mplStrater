@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mplStrater"
-version = "0.0.5"
+version = "0.0.6"
 description = "plot geologic stratigraphic columns with python"
 readme = "README.md"
 license = { text = "MIT" }

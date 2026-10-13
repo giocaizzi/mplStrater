@@ -12,7 +12,7 @@ from rio_color.colorspace import convert_arr
 from mplStrater.strata import Column
 import matplotlib.patheffects as pe
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 
 class StratigraphicMap:
